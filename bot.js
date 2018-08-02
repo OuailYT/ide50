@@ -649,7 +649,6 @@ client.on('message', async message => {
         msg.delete(3500);
         message.delete(3500);
       });
-
       let mention = message.mentions.members.first();
       if(!mention) return message.reply('**منشن عضو لطرده**').then(msg => {
         msg.delete(3500);
