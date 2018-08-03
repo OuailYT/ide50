@@ -350,7 +350,6 @@ client.on("message", message => {
 	  .addField('%كت تويت', `لعبة كت تويت`)
 	  .addField('%لو خيروك', `لعبة لو خيروك`)
           .addField('%قرعة', `لاستعمال القرعة`)
-          .addField('%skin', `يعرض لك سكنك في ماين كرافت`)
       .setFooter('======================================================')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM")
@@ -2298,17 +2297,5 @@ client.on('message', function(message) {
 });
 
 
-client.on("message", message => {
-    var prefix = "%"
-    if (!message.content.startsWith(prefix)) return;
-      let command = message.content.split(" ")[0];
-      command = command.slice(prefix.length);
-        if(command === "skin") {
-                const args = message.content.split(" ").slice(1).join(" ")
-        if (!args) return message.channel.send("** Type your skin name **");
-        const image = new Discord.Attachment(`https://visage.surgeplay.com/full/256/${args}`, "skin.png");
-    message.channel.send(image)
-        }
-    });
 
 client.login(process.env.BOT_TOKEN);
