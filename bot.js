@@ -2278,10 +2278,10 @@ client.on('message', function(message) {
            msg.delete(5000);
           message.delete(5000);
         });
- } else if(message.content.startsWith(prefix + "like")) {
+    } else if(message.content.startsWith(prefix + "like")) {
 				        if(message.author.id !== myID) return;
             if(!args) return message.reply('اكتب الحالة اللي تريدها.');
-        client.user.setActivity(args, {type:'likeing'});
+        client.user.setActivity(args, {type:'LIKEING'});
         message.channel.send(':white_check_mark: Done!').then(msg => {
            msg.delete(5000);
           message.delete(5000);
