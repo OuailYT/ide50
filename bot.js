@@ -1852,10 +1852,18 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**You
 });
 
 client.on('guildCreate', guild => {
-  client.channels.get("473877431611031563").send(`**Woops new server ✅
+  client.channels.get("473877431611031563").send(`:white_check_mark: **تم اضافة البوت في سيرفر جديد مبروكك
 Server name: __${guild.name}__
-Server owner: __${guild.owner}__**`)
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
 });
+client.on('guildDelete', guild => {
+  client.channels.get("474966117190860801").send(`:negative_squared_cross_mark: **طردوني حرام والله ايش سويت انا
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
 
   client.on('message', ReBeeL => {
   var prefix = "%";
