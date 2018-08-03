@@ -292,6 +292,7 @@ client.on("message", message => {
                 .addField('%info', `عشان تشوف الرتبة الموضوعة في الAutorole`)
                 .addField('%mutechannel', `عشان تخلي ما فيه احد يقدر يكتب في الروم المحدد`)
                 .addField('%unmutechannel', `عشان ترجع الناس تقدر تكتب في الروم الي كتمته`)
+                .addField('%roll', `لاستعمال القرعة`)
       .setFooter('======================================================')
       .setFooter('انهيت الصيانة على البوت و بس')
   message.author.send({embed});
@@ -2284,6 +2285,19 @@ client.on('message', function(message) {
     }
 });
 
-
+client.on('message', function(message) {
+    if(message.content.startsWith(prefix + 'roll')) {
+        let args = message.content.split(" ").slice(1);
+        if (!args[0]) {
+            message.channel.send('**حط رقم معين يتم السحب منه**');
+            return;
+            }
+    message.channel.send(Math.floor(Math.random() * args.join(' ')));
+            if (!args[0]) {
+          message.edit('1')
+          return;
+        }
+    }
+});
 
 client.login(process.env.BOT_TOKEN);
