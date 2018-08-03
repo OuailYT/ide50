@@ -292,7 +292,6 @@ client.on("message", message => {
                 .addField('%info', `عشان تشوف الرتبة الموضوعة في الAutorole`)
                 .addField('%mutechannel', `عشان تخلي ما فيه احد يقدر يكتب في الروم المحدد`)
                 .addField('%unmutechannel', `عشان ترجع الناس تقدر تكتب في الروم الي كتمته`)
-                .addField('%roll', `لاستعمال القرعة`)
       .setFooter('======================================================')
       .setFooter('انهيت الصيانة على البوت و بس')
   message.author.send({embed});
@@ -350,6 +349,7 @@ client.on("message", message => {
 	  .addField('%حب', `لعبة الحب`)
 	  .addField('%كت تويت', `لعبة كت تويت`)
 	  .addField('%لو خيروك', `لعبة لو خيروك`)
+          .addField('%قرعة', `لاستعمال القرعة`)
       .setFooter('======================================================')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM")
@@ -2286,7 +2286,7 @@ client.on('message', function(message) {
 });
 
 client.on('message', function(message) {
-    if(message.content.startsWith(prefix + 'roll')) {
+    if(message.content.startsWith(prefix + 'قرعة')) {
         let args = message.content.split(" ").slice(1);
         if (!args[0]) {
             message.channel.send('**حط رقم معين يتم السحب منه**');
