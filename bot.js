@@ -382,7 +382,7 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© EpicBot جميع الحقوق محفوظة 2018 لــبوت')
-      .addField('سيرفر الدعم الفني', `https://discord.gg/B4cXsjD`)
+      .addField('سيرفر الدعم الفني', `https://discord.gg/JM2sNEp`)
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM")
  }
