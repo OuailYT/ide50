@@ -2309,7 +2309,6 @@ client.on('message', function(message) {
 client.on('message',async message => {
 if(message.content === prefix + "say") {
 var args = mesage.content.split(' ').slice(1).join(' ');
-if(!args) return;
 message.channel.send(`- ${args}`);
 }
 });
