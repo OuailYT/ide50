@@ -2306,23 +2306,22 @@ client.on('message', function(message) {
     }
 });
 
-    client.on('message', message => {
-        var prefix = "%";
-        if (message.author.bot) return;
-        if (!message.content.startsWith(prefix)) return;
-      
-        let command = message.content.split(" ")[0];
-        command = command.slice(prefix.length);
-      
-      
-      let args = message.content.split(" ").slice(1);
-      let x = args.join(" ")
-        if(message.content.startsWith(prefix + 'say')) {
-            message.channel.send(''+x);
-                message.delete(01000)
-        }
-        
-       
-      });
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+if (command == "say") {
+    let say = new Discord
+  .setThumbnail(message.author.avatarURL)
+  .setAuthor(message.author.username)
+    .setDescription(args.join("  "))
+    message.channel.send(say);
+    message.delete();
+  }
+  });
 
 client.login(process.env.BOT_TOKEN);
