@@ -2306,13 +2306,23 @@ client.on('message', function(message) {
     }
 });
 
-client.on('message',async message => {
-var p = "%";
-if(message.content === p + "say") {
-var args = mesage.content.split(' ').slice(1).join(' ');
-if(!args) return;
-message.channel.send(`- ${args}`);
-}
-});
+    client.on('message', message => {
+        var prefix = "%";
+        if (message.author.bot) return;
+        if (!message.content.startsWith(prefix)) return;
+      
+        let command = message.content.split(" ")[0];
+        command = command.slice(prefix.length);
+      
+      
+      let args = message.content.split(" ").slice(1);
+      let x = args.join(" ")
+        if(message.content.startsWith(prefix + 'say')) {
+            message.channel.send(''+x);
+                message.delete(01000)
+        }
+        
+       
+      });
 
 client.login(process.env.BOT_TOKEN);
