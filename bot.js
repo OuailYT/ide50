@@ -314,7 +314,6 @@ client.on("message", message => {
 	  .addField('%id', `يجبلك الملف الشخصي حقك`)
 	 	  .addField('%servers', `يجبلك عدد السيرفرات التي البوت داخله`)
 	  .addField('%embed', `البوت يكرر الكلام الي انت تقوله بامبد`)
-	  .addField('%say', `البوت يكرر الكلام الي انت تقوله بدون امبد`)
 	  .addField('%ping', `يقلك كم بنق البوت`)
           .addField('%support', `سيرفر الدعم حق البوت`)
 	  .addField('%image', `يعرض صورة سيرفر`)
