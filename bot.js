@@ -78,23 +78,67 @@ client.on('message', msg => {
   }
 });
 
-client.on('message', msg => {
-        if (msg.content.startsWith(`%warn`)) {
-          if(!msg.member.hasPermission("MANAGE_MESSAGES")) return;
-           let args = msg.content.split(" ").slice(1);
-          if (!msg.mentions.members.first()) return msg.reply('منشن الشخص المحدد')
-          if (!args[1]) return msg.reply('``اكتب السبب``')
-          //غير اسم الروم او سوي روم بذا الاسم
-          if (msg.guild.channels.find('name', 'warns')) {
-            //اذا غيرت فوق غير هنا كمان
-            msg.guild.channels.find('name', 'warns').send(`
-          تم اعطائك تنبيه : ${msg.mentions.members.first()}
-          لأنك قمت بما يلي
-          ${args.join(" ").split(msg.mentions.members.first()).slice(' ')}
-          `)
-          }
-        }
-})
+const fs = require("fs"); //npm i fs
+const ms = require("ms"); //npm i ms
+let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+
+client.on('message', message =>{
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let prefix = '%';
+     
+    if(cmd === `${prefix}warn`) {
+
+  //!warn @daeshan <reason>
+  if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("U don't have enough permissions to warn Users!");
+  let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+  if(!wUser) return message.reply("yo i can't find this User");
+  if(wUser.hasPermission("ADMINISTRATOR")) return message.reply("This User is very cool why warn him? >.>");
+  let reason = args.join(" ").slice(22);
+
+  if(!warns[wUser.id]) warns[wUser.id] = {
+    warns: 0
+  };
+
+  warns[wUser.id].warns++;
+
+  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+    if (err) console.log(err)
+  });
+
+  let warnEmbed = new Discord.RichEmbed()
+  .setDescription("Warns")
+  .setAuthor(message.author.username)
+  .setColor("#fc6400")
+  .addField("Warned User", `<@${wUser.id}>`)
+  .addField("Warned In", message.channel)
+  .addField("Number of Warnings", warns[wUser.id].warns)
+  .addField("Reason", reason);
+
+
+  message.channel.send(warnEmbed);
+
+  if(warns[wUser.id].warns == 2){
+    let muterole = message.guild.roles.find(`name`, "muted");
+    if(!muterole) return message.reply("You should make A **muted** role, to mute this User!!");
+
+    let mutetime = "10s";
+    await(wUser.addRole(muterole.id));
+    message.channel.send(`<@${wUser.id}> Just muted for sometime!`);
+
+    setTimeout(function(){
+      wUser.removeRole(muterole.id)
+      message.reply(`<@${wUser.id}> Just unmuted!`)
+    }, ms(mutetime))
+  }
+  if(warns[wUser.id].warns == 3){
+    message.guild.member(wUser).ban(reason);
+    message.reply(`<@${wUser.id}> Just banned for 3 warns!!`)
+  }
+
+}
+});
 
   client.on('message', message => {
      if(message.content.startsWith(prefix +"bans")) {
@@ -286,7 +330,7 @@ client.on("message", message => {
           .addField('%unmute', `لفك الميوت عن شخص `)
           .addField('%untempmute', `لفك الميوت عن شخص `)
           .addField('%report', `عشان تبلغ عن شخص`)
-	  .addField('%warn', `عشان تعطي احد انظار و لكي يشتغل الامر سوي روم اسمه warns`)
+	  .addField('%warn', `عشان تعطي احد انظار و 2 انظار البوت يعطيه تلقائيا ميوت و 3 يعطيه بان`)
           .addField('%Autorole toggle', `عشان تفعل الautorole`)
           .addField('%Autorole set', `عشان تحط الرتبة الي اول ما احد يدخل ياخذها`)
                 .addField('%info', `عشان تشوف الرتبة الموضوعة في الAutorole`)
