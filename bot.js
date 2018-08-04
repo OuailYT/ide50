@@ -2316,8 +2316,6 @@ client.on('message', message => {
 
 if (command == "say") {
     let say = new Discord
-  .setThumbnail(message.author.avatarURL)
-  .setAuthor(message.author.username)
     .setDescription(args.join("  "))
     message.channel.send(say);
     message.delete();
