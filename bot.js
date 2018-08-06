@@ -1256,27 +1256,6 @@ if (!channel) return;
 channel.send({embed : MoCodes});
 });
 
-//By ReBeL //By ReBeL
-//جميع الحقوق محفوظهه لريبل فقط .
-client.on("ready", async  => {
-setInterval(function(){
-client.channels.find('id', '471827866393378827').setName("W");
-client.channels.find('id', '471827866393378827').setName("We");
-client.channels.find('id', '471827866393378827').setName("Wel");
-client.channels.find('id', '471827866393378827').setName("Welc");
-client.channels.find('id', '471827866393378827').setName("Welco");
-client.channels.find('id', '471827866393378827').setName("Welcom");
-client.channels.find('id', '471827866393378827').setName("Welcome");
-client.channels.find('id', '471827866393378827').setName("Welcome T");
-client.channels.find('id', '471827866393378827').setName("Welcome To");
-client.channels.find('id', '471827866393378827').setName("Welcome To E");
-client.channels.find('id', '471827866393378827').setName("Welcome To Ep");
-client.channels.find('id', '471827866393378827').setName("Welcome To Epic");
-client.channels.find('id', '471827866393378827').setName("Welcome To EpicBots");
-client.channels.find('id', '471827866393378827').setName("Welcome To EpicBots•Support");
-  }, 3000);
-});
-//By ReBeL
 
 client.on('message', message => {
             if(!message.channel.guild) return;
