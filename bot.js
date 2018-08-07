@@ -1850,7 +1850,7 @@ Server Count: __${guild.memberCount}__**`)
       if(ReBeeL.content.startsWith(prefix + "owner")) {
         let args = ReBeeL.content.split(" ").slice(1);
            if(!args[0]) {
-              ReBeeL.channel.send("** .contact <message> **")
+              ReBeeL.channel.send("** %owner <message> **")
                 return;
                   }
                    var rebel = new Discord.RichEmbed()
