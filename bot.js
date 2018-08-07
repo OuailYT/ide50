@@ -323,7 +323,7 @@ client.on("message", message => {
           .addField('%daily', `عشان تاخذ الكردتس اليومية الخاصة بك`)
           .addField('%trans', `عشان تعطي لاحد مبلغ من الكردتس الخاصة بك`)
           .addField('%cal', `لاستخدام الالة الحاسبة + للجمع - للطرح * للضرب / للقسمة`)
-          .addField('%contact', `لارسال رسالة لصاحب البوت`)
+          .addField('%owner', `لارسال رسالة لاونر سيرفر`)
           .addField('%suggest', `لاقتراح شئ و لازم يكون فيه روم اسمه suggestions `)
           .addField('%uptime', `عشان تشوف البوت شغال من متى`)
           .addField('%Botinfo', `عشان تعرف معلومات البوت`)
@@ -1847,7 +1847,7 @@ Server Count: __${guild.memberCount}__**`)
   client.on('message', ReBeeL => {
   var prefix = "%";
     if(ReBeeL.author.bot) return;
-      if(ReBeeL.content.startsWith(prefix + "contact")) {
+      if(ReBeeL.content.startsWith(prefix + "owner")) {
         let args = ReBeeL.content.split(" ").slice(1);
            if(!args[0]) {
               ReBeeL.channel.send("** .contact <message> **")
@@ -1863,7 +1863,7 @@ ${args}
         `)
         .setFooter(` بوآسطة ${ReBeeL.author.username}#${ReBeeL.author.discriminator}`)
        ReBeeL.guild.owner.send(rebel);
-      ReBeeL.channel.send("**تم إرسآل الرسآلة إلى أونر البوت**")
+      ReBeeL.channel.send("**تم إرسآل الرسآلة إلى أونر السيرفر**")
      }
     }
   );
