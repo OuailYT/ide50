@@ -1234,7 +1234,7 @@ let args = message.content.split(" ").slice(1);
 
 
 client.on('message', message => {
-    let channel = member.guild.channels.find('name', 'welcome');
+ if (message.content.startsWith("%wlc")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1253,8 +1253,8 @@ client.on('message', message => {
   .setColor('RANDOM')
   .setThumbnail(`${mentionavatar.avatarURL}`)
   .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
-  .setDescription('***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا***')
-  .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
+  .setDescription('***مرحباً بك عدد ما خطته الأقلام من حروف وبعدد ما أزهر بالأرض زهور مرحباً ممزوجة بعطر الورد ورائحة البخور***')
+  .setImage('https://www.askideas.com/media/13/Welcome-Signboard-Clipart.jpg')
    message.channel.sendEmbed(EsTeKnAN);
   }
 });
