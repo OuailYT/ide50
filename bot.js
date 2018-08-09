@@ -2208,10 +2208,26 @@ client.on("message", message => {
  }
 });
 
-  client.on('ready', () => {
-     client.user.setActivity("%help | BOT By x̷H̷e̷x̷o̷n̷",{type: 'WATCHING'});
+client.on("ready", () => {
+client.user.setPresence({
+  status: 'dnd',
+  game: { 
+     type: 0,
+     name: '%help ',
+     details: `Bot By | xHexon`,
+     url: 'http://twitch.tv/xBacos',
+     state: `https://discord.gg/JM2sNEp`,
+    application_id: '281376075802476544',
+     assets: {
+        small_image: `470045309754671104`,
+        small_text: ' epicf ' ,
+        large_image: `470045309754671104`,
+        large_text: `epic` }
 
+  }
+    });
 });
+
 
 client.on('message', function(message) {
     if(message.content.startsWith(prefix + 'قرعة')) {
