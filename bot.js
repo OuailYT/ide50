@@ -1871,6 +1871,8 @@ client.on("message", message => {
 ❧ %help-Games ➺ ⦁اوامر الالعاب ⦁
 
 ❧ %help-Music ➺ ⦁اوامر الاغاني ⦁
+
+❧ %help-Welcome ➺ ⦁معلومات الترحيب في البوت⦁
 ─════════════ {✯EpicBot✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
