@@ -2217,6 +2217,11 @@ client.on("message", message => {
  }
 });
 
+  client.on('ready', () => {
+     client.user.setActivity("%help | BOT By x̷H̷e̷x̷o̷n̷",{type: 'WATCHING'});
+
+});
+  
 
 client.on('message', function(message) {
     if(message.content.startsWith(prefix + 'قرعة')) {
