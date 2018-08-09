@@ -2213,11 +2213,11 @@ client.user.setPresence({
   status: 'dnd',
   game: { 
      type: 0,
-     name: '%help ',
-     details: `Bot By | xHexon`,
+     name: '%help',
+     details: `BOT By x̷H̷e̷x̷o̷n̷`,
      url: 'http://twitch.tv/xBacos',
      state: `https://discord.gg/JM2sNEp`,
-    application_id: '281376075802476544',
+    application_id: '470045309754671104',
      assets: {
         small_image: `470045309754671104`,
         small_text: ' epicf ' ,
