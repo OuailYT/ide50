@@ -2194,6 +2194,30 @@ client.on("message", message => {
  }
 });
 
+client.on("message", message => {
+ if (message.content === "%help-Welcome") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setFooter('© EpicBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
+      .setFooter('Wlc')
+	  .addField('%welcome 1', `يخلي البوت يرسل لك ترحيب بشكل حلو`)
+	  .addField('%welcome 2', `يخلي البوت يرسل لك ترحيب بشكل تاني خورافي`)
+	  .addField('%welcome 3', `يخلي البوت يرسل لك ترحيب بشكل غير الي فاتوا`)
+	  .addField('%welcome 4', `يخلي البوت يرسل لك ترحيب بشكل اخر و خورافي مرة`)
+          .addField('%welcome 5', `يخلي البوت يرحب بك بشكل حلو`)
+          .addField('%welcome 6', `يخلي البوت يرحب بك بطريقة خورافية`)
+          .addField('%welcome 7', `يخلي البوت يرحب بك بطريقة حلوة`)
+          .addField('%welcome 8', `يخلي البوت يرحب بك مثل الباقي`)
+          .addField('%welcome 9', `يخلي البوت يرحب بك مثل الباقي`)
+          .addField('%welcome 10', `يخلي البوت يرحب بك مثل الباقي`)
+      .setFooter('======================================================')
+      .setFooter('هذه اوامر تخلي بوت يرسل لك رسالة ترحيب بس لما تدخل السيرفر فيه ترحيب بيرحب بك بيه خورافي و هذا ترحيب ما تقدر تغيره و عشان يشتغل سوي روم سمه welcome')
+  message.author.send({embed});
+      message.channel.send(":white_check_mark: | Check Your DM")
+
+ }
+});
+
   client.on('ready', () => {
      client.user.setActivity("%help | BOT By x̷H̷e̷x̷o̷n̷",{type: 'WATCHING'});
 
