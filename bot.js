@@ -2215,14 +2215,14 @@ client.user.setPresence({
      type: 0,
      name: '%help',
      details: `BOT By x̷H̷e̷x̷o̷n̷`,
-     url: 'http://twitch.tv/xBacos',
+     url: 'http://twitch.tv/Streammingg',
      state: `https://discord.gg/JM2sNEp`,
     application_id: '470045309754671104',
      assets: {
-        small_image: `470045309754671104`,
-        small_text: ' epicf ' ,
-        large_image: `470045309754671104`,
-        large_text: `epic` }
+        small_image: `epicf`,
+        small_text: 'EpicBot Support' ,
+        large_image: `epic`,
+        large_text: `EpicBot For Ever <3` }
 
   }
     });
