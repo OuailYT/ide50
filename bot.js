@@ -1233,27 +1233,31 @@ let args = message.content.split(" ").slice(1);
 });
 
 
-client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'welcome');
-    let memberavatar = member.user.avatarURL
-      if (!channel) return;
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField(':running_shirt_with_sash: | name :  ',`${member}`)
-        .addField(':loudspeaker: | اطلق من دخل' , `Welcome to the server, ${member}`)
-        .addField(':id: | user :', "**[" + `${member.id}` + "]**" )
-                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
-
-                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
-
-                                     .addField(' الـسيرفر', `${member.guild.name}`,true)
-
-     .setFooter(`${member.guild.name}`)
-        .setTimestamp()
-
-      channel.sendEmbed(embed);
-    });
+client.on('message', message => {
+ if (message.content.startsWith("guildMemberAdd")) {
+                                 var mentionned = message.mentions.users.first();
+             var mentionavatar;
+               if(mentionned){
+                   var mentionavatar = mentionned;
+               } else {
+                   var mentionavatar = message.author;
+                   
+               }
+               let bot;
+               if(message.author.bot) {
+                   bot = 'Bot'
+               } else {
+                   bot = 'User'
+               } 
+  var EsTeKnAN = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setThumbnail(`${mentionavatar.avatarURL}`)
+  .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
+  .setDescription('***مرحبا باللي يجينا هلت الفرحة علينا نشدت الأشواق فينا مرحباً بكم مرحباً.***')
+  .setImage('https://www.askideas.com/media/13/Welcome-Sign.jpg')
+   message.channel.sendEmbed(EsTeKnAN);
+  }
+});
 
     client.on('guildMemberRemove', member => {
     var MoCodes = new Discord.RichEmbed()
