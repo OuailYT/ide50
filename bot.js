@@ -2208,21 +2208,22 @@ client.on("message", message => {
  }
 });
 
+
 client.on("ready", () => {
 client.user.setPresence({
   status: 'dnd',
   game: { 
      type: 0,
-     name: '%help',
-     details: `BOT By x̷H̷e̷x̷o̷n̷`,
+     name: 'Surprise Mother Fucker :) ',
+     details: `I'm : KBOOSH - Developer and Programmer`,
      url: 'http://twitch.tv/Streammingg',
-     state: `https://discord.gg/JM2sNEp`,
-    application_id: '470045309754671104',
+     state: `إنْ لَمْ تَجِد لكْ حآقدْ إعلمْ أنْك إنسآن فآشِلْ`,
+    application_id: '281376075802476544',
      assets: {
-        small_image: `epicf`,
-        small_text: 'EpicBot Support' ,
-        large_image: `epic`,
-        large_text: `EpicBot For Ever <3` }
+        small_image: `366835431037337600`,
+        small_text: ' Take This ! ' ,
+        large_image: `370451271133429760`,
+        large_text: `ҜṦẰ FOREVER ♥` }
 
   }
     });
