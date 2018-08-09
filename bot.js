@@ -1464,20 +1464,6 @@ client.on('ready', () => {
 });
 
 
-
-
-
-
-
- const child_process = require("child_process");
-  client.on('ready' , function (){
-var time = 7200000;
-client.setInterval(function() {
-    client.destroy();
-        child_process.fork(__dirname + "/b.js");
-  }, time);
-});
-
   const math = require('math-expression-evaluator');
 const stripIndents = require('common-tags').stripIndents;
 
