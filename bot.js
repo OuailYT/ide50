@@ -2209,25 +2209,6 @@ client.on("message", message => {
 });
 
 
-client.on("ready", () => {
-client.user.setActivity
-game: {
-type: 0,
-name: '%help ',
-details: `Bot By x̷H̷e̷x̷o̷n̷`,
-url: 'http://twitch.tv/xBacos',
-state: `https://discord.gg/JM2sNEp`,
-application_id: '470045309754671104',
-assets: {
-small_image: `epic`,
-small_text: ' %help ' ,
-large_image: `epicf`,
-large_text: `+invite` }
-
-}
-});
-});
-
 client.on('message', function(message) {
     if(message.content.startsWith(prefix + 'قرعة')) {
         let args = message.content.split(" ").slice(1);
