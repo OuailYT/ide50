@@ -2209,6 +2209,23 @@ client.on("message", message => {
 });
 
 
+    static void UpdatePresence()
+    {
+        DiscordRichPresence discordPresence;
+        memset(&discordPresence, 0, sizeof(discordPresence));
+        discordPresence.state = "https://discord.gg/JM2sNEp";
+        discordPresence.details = "%help | Bot By x̷H̷e̷x̷o̷n̷";
+        discordPresence.startTimestamp = 4214212142152153;
+        discordPresence.endTimestamp = 4214212142152153;
+        discordPresence.largeImageKey = "epic";
+        discordPresence.largeImageText = "%help";
+        discordPresence.smallImageKey = "epicf";
+        discordPresence.smallImageText = "%invite";
+        discordPresence.partySize = 1;
+        discordPresence.partyMax = 1;
+        Discord_UpdatePresence(&discordPresence);
+    }
+
 client.on('message', function(message) {
     if(message.content.startsWith(prefix + 'قرعة')) {
         let args = message.content.split(" ").slice(1);
