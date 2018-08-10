@@ -328,6 +328,7 @@ client.on("message", message => {
           .addField('%uptime', `عشان تشوف البوت شغال من متى`)
           .addField('%Botinfo', `عشان تعرف معلومات البوت`)
           .addField('%color', `عشان تغير لونك ولازم يكون فيه رتب باسم الالوان حقة القلوب الي في صورة الامر اسماء الالوان احمر red اصفر yellow بنفسجي y2 ازرق لبني y3 اخضر y1 اسود black`)
+          .addField('%contact', `لارسال رسالة لصاحب البوت`)
       .setFooter('======================================================')
       .setFooter('انهيت الصيانة على البوت و بس')
 	  .addField('%cat', `يجبلك صورة قطة`)
@@ -2532,6 +2533,40 @@ client.on('message', message => {
   .setImage('https://www.askideas.com/media/13/Beautiful-Wooden-Welcome-Sign.jpg')
    message.channel.sendEmbed(EsTeKnAN);
   }
+});
+
+client.on('message' , message => {
+
+if (message.author.bot) return;
+if (message.content.startsWith(prefix + "contact")) {
+if (!message.channel.guild) return;
+
+
+
+let args = message.content.split(" ").slice(1).join(" ");
+
+
+
+client.users.get("385103221804236800").send(
+    "\n" + "**" + "● السيرفر :" + "**" +
+    "\n" + "**" + "» " + message.guild.name + "**" +
+    "\n" + "**" + " ● المرسل : " + "**" +
+    "\n" + "**" + "» " + message.author.tag + "**" +
+    "\n" + "**" + " ● الرسالة : " + "**" +
+    "\n" + "**" + args + "**")
+
+let embed = new Discord.RichEmbed()
+     .setAuthor(message.author.username, message.author.avatarURL)
+     .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
+     .setThumbnail(message.author.avatarURL)
+     .setFooter("By : IiMr7MoDyX")
+                                                
+
+message.channel.send(embed);
+
+
+}
+    
 });
 
 client.login(process.env.BOT_TOKEN);
