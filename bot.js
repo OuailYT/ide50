@@ -1241,14 +1241,14 @@ client.on('guildMemberAdd', member => {
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
-        .addField(':regional_indicator_n: :a: :m: :regional_indicator_e:  | الاسم :  ',`${member}`)
-        .addField(':pencil:  | مرحبا بك في السيرفر' , `مرحبا بك في السيرفر, ${member}`)
+        .addField(':regional_indicator_n: :a: :m: :regional_indicator_e:  | ***الاسم*** :  ',`${member}`)
+        .addField(':pencil:  | ***مرحبا بك في السيرفر***' , `***مرحبا بك في السيرفر,*** ${member}`)
         .addField(':id: | user :', "**[" + `${member.id}` + "]**" )
-                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
+                .addField('➡| ***انت العضو رقم***',`${member.guild.memberCount}`)
 
-                  .addField("الاسم:",`<@` + `${member.id}` + `>`, true)
+                  .addField("***الاسم***:",`<@` + `${member.id}` + `>`, true)
 
-                                     .addField(' الـسيرفر', `${member.guild.name}`,true)
+                                     .addField(' ***الـسيرفر***', `${member.guild.name}`,true)
 
      .setFooter(`${member.guild.name}`)
         .setTimestamp()
@@ -1259,7 +1259,7 @@ client.on('guildMemberAdd', member => {
     client.on('guildMemberRemove', member => {
     var MoCodes = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
-    .setDescription('راح الحبيب '+'<@'+`${member.user.id}`+'>'+'T-T')
+    .setDescription('***راح الحبيب*** '+'<@'+`${member.user.id}`+'>'+'T-T')
     .setColor('RANDOM')
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
@@ -1874,15 +1874,15 @@ client.on("message", message => {
              Please Choose:
 
 ─════════════ {✯EpicBot✯} ════════════─
-❧ %help-Admin ➺ ⦁ اوامر الادارة ⦁
+❧ %help-Admin ➺ ⦁ ***اوامر الادارة*** ⦁
 
-❧ %help-Public ➺ ⦁ اوامر العامة ⦁
+❧ %help-Public ➺ ⦁ ***اوامر العامة*** ⦁
 
-❧ %help-Games ➺ ⦁اوامر الالعاب ⦁
+❧ %help-Games ➺ ⦁***اوامر الالعاب*** ⦁
 
-❧ %help-Music ➺ ⦁اوامر الاغاني ⦁
+❧ %help-Music ➺ ⦁***اوامر الاغاني*** ⦁
 
-❧ %help-Welcome ➺ ⦁معلومات الترحيب في البوت⦁
+❧ %help-Welcome ➺ ⦁***معلومات الترحيب في البوت***⦁
 ─════════════ {✯EpicBot✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
