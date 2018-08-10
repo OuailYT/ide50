@@ -1241,11 +1241,11 @@ client.on('guildMemberAdd', member => {
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
         .addField(':regional_indicator_n: :a: :m: :regional_indicator_e:  | الاسم :  ',`${member}`)
-        .addField(':pencil:  | امرحبا بك في السيرفر' , `مرحبا بك في السيرفر, ${member}`)
+        .addField(':pencil:  | مرحبا بك في السيرفر' , `مرحبا بك في السيرفر, ${member}`)
         .addField(':id: | user :', "**[" + `${member.id}` + "]**" )
                 .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
 
-                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
+                  .addField("الاسم:",`<@` + `${member.id}` + `>`, true)
 
                                      .addField(' الـسيرفر', `${member.guild.name}`,true)
 
