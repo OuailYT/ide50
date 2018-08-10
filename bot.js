@@ -1249,7 +1249,7 @@ client.on('guildMemberAdd', member => {
                   .addField("***الاسم***:",`<@` + `${member.id}` + `>`, true)
 
                                      .addField(' ***الـسيرفر***', `${member.guild.name}`,true)
-.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477469283878961160/gfd.jpg')
+.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477469283878961160/gfd.jpg','https://cdn.discordapp.com/attachments/445335688628666388/477605580203098112/images.png','https://cdn.discordapp.com/attachments/445335688628666388/477608211197722634/images.png','https://cdn.discordapp.com/attachments/445335688628666388/477608355632775178/images.png')
 
      .setFooter(`${member.guild.name}`)
         .setTimestamp()
@@ -1261,7 +1261,7 @@ client.on('guildMemberAdd', member => {
     var MoCodes = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
     .setDescription('***راح الحبيب*** '+'<@'+`${member.user.id}`+'>'+'T-T')
-.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477597893822382091/gd.jpg')
+.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477597893822382091/gd.jpg','https://cdn.discordapp.com/attachments/445335688628666388/477609046568861696/Z.png')
     .setColor('RANDOM')
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
