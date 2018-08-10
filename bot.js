@@ -1249,23 +1249,23 @@ client.on('guildMemberAdd', member => {
                   .addField("***الاسم***:",`<@` + `${member.id}` + `>`, true)
 
                                      .addField(' ***الـسيرفر***', `${member.guild.name}`,true)
+.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477469283878961160/gfd.jpg')
 
      .setFooter(`${member.guild.name}`)
         .setTimestamp()
 
       channel.sendEmbed(embed);
-.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477469283878961160/gfd.jpg')
     });
 
     client.on('guildMemberRemove', member => {
     var MoCodes = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
     .setDescription('***راح الحبيب*** '+'<@'+`${member.user.id}`+'>'+'T-T')
+.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477597893822382091/gd.jpg')
     .setColor('RANDOM')
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
 channel.send({embed : MoCodes});
-.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477597893822382091/gd.jpg')
 });
 
 
