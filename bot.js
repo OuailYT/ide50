@@ -329,9 +329,9 @@ client.on("message", message => {
           .addField('%Botinfo', `عشان تعرف معلومات البوت`)
           .addField('%color', `عشان تغير لونك ولازم يكون فيه رتب باسم الالوان حقة القلوب الي في صورة الامر اسماء الالوان احمر red اصفر yellow بنفسجي y2 ازرق لبني y3 اخضر y1 اسود black`)
           .addField('%contact', `لارسال رسالة لصاحب البوت`)
+	  .addField('%cat', `يجبلك صورة قطة`)
       .setFooter('======================================================')
       .setFooter('انهيت الصيانة على البوت و بس')
-	  .addField('%cat', `يجبلك صورة قطة`)
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM")
  }
