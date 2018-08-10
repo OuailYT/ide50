@@ -7,7 +7,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'ping') {
-        message.reply('pong');
+        message.reply('pong!');
       }
 });
 
@@ -1254,6 +1254,7 @@ client.on('guildMemberAdd', member => {
         .setTimestamp()
 
       channel.sendEmbed(embed);
+.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477469283878961160/gfd.jpg')
     });
 
     client.on('guildMemberRemove', member => {
@@ -1264,6 +1265,7 @@ client.on('guildMemberAdd', member => {
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
 channel.send({embed : MoCodes});
+.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477597893822382091/gd.jpg')
 });
 
 
