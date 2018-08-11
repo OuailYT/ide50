@@ -1463,7 +1463,7 @@ Role : __${ar[message.guild.id].role}__`)
 
 client.on('ready', () => {
   console.log(`AutoRole Code Started By Friends Team`);
-    client.user.setStatus("dnd")
+    client.user.setStatus("online")
 });
 
 
