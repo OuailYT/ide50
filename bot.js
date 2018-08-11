@@ -2249,7 +2249,7 @@ client.on('message', function(message) {
 client.on('message', message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
-
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply("انت لا تملك صلااحيةADMINSTRATOR !! ").then(msg => msg.delete(5000));
   let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
 
