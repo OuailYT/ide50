@@ -112,6 +112,7 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
         message.delete()
     return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
     }
+ }
 });
 
 
