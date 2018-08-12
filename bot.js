@@ -1732,6 +1732,8 @@ client.on('message', message => {
 }
 });
 
+
+
 client.on('message', message => {
      var prefix = "%"
      if (message.author.bot) return;
@@ -1776,6 +1778,7 @@ if (message.content.startsWith(prefix + "uptime")) {
 
 }
 });
+
 
 client.on('ready', () => {
   console.log('╔[══════════════════════════════════]╗');
