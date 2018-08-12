@@ -2550,7 +2550,7 @@ delete warn[message.author.id];
       .setTitle(":scales: | you are punished")
       .setDescription(`**You have been Muted **\n\nBy:\n${client.user.tag}\n\nThe reason:\nSpam Chat\n\nMuted Date:\n`+ Year + "/" + Month + "/" + Day +', '+hours +'-' +minutes+'-'+seconds+"\n \n \n`If the punishment by mistake continues with the administration \n\nTime of unmute : Two hours after the date of the death`")
           .setFooter(message.guild.iconURL)
-      .setColor("ff0000")
+      .setColor("RANDOM")
       message.author.send(embed20)
    }
 });
@@ -2612,7 +2612,7 @@ const channel = client.channels.find("name","log")
 
     let embed = new Discord.RichEmbed()
        .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-       .setColor('SILVER')
+       .setColor('RANDOM')
        .setDescription(`✏ **تعديل رساله
 ارسلها <@${message.author.id}>                                                                                                                         تم تعديلها في شات** <#${message.channel.id}>\n\nقبل التعديل:\n \`${message.cleanContent}\`\n\nبعد التعديل:\n \`${newMessage.cleanContent}\``)
        .setTimestamp();
@@ -2627,14 +2627,10 @@ client.on('guildMemberAdd', member => {
 
 const channel = client.channels.find("name","log")
     if (!channel) return;
-    let memberavatar = member.user.avatarURL
-    const fromNow = moment(member.user.createdTimestamp).fromNow();
-    const isNew = (new Date() - member.user.createdTimestamp) < 900000 ? '🆕' : '';
-
     let embed = new Discord.RichEmbed()
        .setAuthor(`${member.user.tag}`, member.user.avatarURL)
-	   .setThumbnail(memberavatar)
-       .setColor('GREEN')
+       .setThumbnail(member.user.avatarURL)
+       .setColor('RANDOM')
        .setDescription(`📥 <@${member.user.id}> **Joined To The Server**\n\n`)
        .setTimestamp();
      channel.send({embed:embed});
@@ -2652,7 +2648,7 @@ client.on('guildMemberRemove', member => {
     let embed = new Discord.RichEmbed()
        .setAuthor(`${member.user.tag}`, member.user.avatarURL)
 	   .setThumbnail(memberavatar)
-       .setColor('RED')
+       .setColor('RANDOM')
        .setDescription(`📤 <@${member.user.id}> **Leave From Server**\n\n`)
        .setTimestamp();
      channel.send({embed:embed});
@@ -2665,7 +2661,7 @@ const channel = client.channels.find("name","log")
 
     let embed = new Discord.RichEmbed()
        .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-       .setColor('BLACK')
+       .setColor('RANDOM')
        .setDescription(`🗑️ **حذف رساله**
 **ارسلها <@${message.author.id}>                                                                                                                        تم حذفها في شات** <#${message.channel.id}>\n\n \`${message.cleanContent}\``)
        .setTimestamp();
