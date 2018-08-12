@@ -108,7 +108,7 @@ client.on('message', msg => {
 
 client.on('message', message => {
     if(message.content.includes('discord.gg','.com','.net','.io','.tv','https://','http://')){
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('**يجب ان يكون عندك برمشن Administrator** `ADMINISTRATOR`' );
         message.delete()
     return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
     }
