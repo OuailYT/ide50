@@ -2644,7 +2644,7 @@ client.on('guildMemberRemove', member => {
     if (!member || !member.id || !member.guild) return;
     const guild = member.guild;
 
-    const channel = guild.channels.find('name', 'log');
+   const channel = client.channels.find("name","log")
     if (!channel) return;
     let memberavatar = member.user.avatarURL
     const fromNow = moment(member.joinedTimestamp).fromNow();
