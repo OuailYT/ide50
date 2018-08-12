@@ -2186,7 +2186,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
   command = command.slice(prefix.length);
    let args = message.content.split(" ").slice(1);
    if (command == "say") {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply("**انت لا تملك صلااحيةADMINSTRATOR !**").then(msg => msg.delete(5000));
+ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('**يلزم لهذآ ألأمر أن تكون من ألإدآرة أو لديك برمشن** `ADMINISTRATOR`' );
    message.channel.sendMessage(args.join("  "))
    message.delete()
   }
