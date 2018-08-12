@@ -2253,9 +2253,9 @@ client.on('message', message => {
   command = command.slice(prefix.length);
 
   let args = message.content.split(" ").slice(1);
-
-  if (command == "say") {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply("**انت لا تملك صلااحيةADMINSTRATOR !**").then(msg => msg.delete(5000));
+if (command == "say") {
+if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
+return message.reply("**انت لا تملك صلااحيةADMINSTRATOR !**").then(msg => msg.delete(5000));
    message.channel.sendMessage(args.join("  "))
   }
  });
