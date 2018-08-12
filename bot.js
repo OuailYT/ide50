@@ -108,7 +108,7 @@ client.on('message', msg => {
 
 
 client.on('message', message => {
-    if(message.content.includes('discord.gg')){
+    if(message.content.includes('discord.gg','.com','.net','.tv','.io','https://','http://')){
                                             if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
         if (!message.member.hasPermissions(['ADMINISTRATOR'])){
         message.delete()
@@ -116,71 +116,6 @@ client.on('message', message => {
     }
 }
 });
-
-client.on('message', message => {
-    if(message.content.includes('.tv')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
-
-client.on('message', message => {
-    if(message.content.includes('.com')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
-
-client.on('message', message => {
-    if(message.content.includes('.net')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
-
-client.on('message', message => {
-    if(message.content.includes('.io')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
-
-
-client.on('message', message => {
-    if(message.content.includes('https://')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
-
-
-client.on('message', message => {
-    if(message.content.includes('http://')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
-    }
-}
-});
-
-
-
 
         client.on('message', async message => {
             if(message.content.includes('discord.gg','.com','.net','https://','http://','.io','.tv')){
