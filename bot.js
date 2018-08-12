@@ -2622,8 +2622,8 @@ const channel = client.channels.find("name","log")
 });
 
 client.on('guildMemberAdd', member => {
-    if (!member || !member.id || !member.guild) return;
-    const guild = member.guild;
+    if (!member || !member.id || !member.client) return;
+    const client = member.client;
 
 const channel = client.channels.find("name","log")
     if (!channel) return;
@@ -2642,7 +2642,7 @@ const channel = client.channels.find("name","log")
 
 client.on('guildMemberRemove', member => {
     if (!member || !member.id || !member.guild) return;
-    const guild = member.guild;
+    const client = member.client;
 
    const channel = client.channels.find("name","log")
     if (!channel) return;
@@ -2659,7 +2659,7 @@ client.on('guildMemberRemove', member => {
 });
 
 client.on('messageDelete', message => {
-    if (!message || !message.id || !message.content || !message.guild || message.author.bot) return;
+    if (!message || !message.id || !message.content || !message.client || message.author.bot) return;
 const channel = client.channels.find("name","log")
     if (!channel) return;
 
@@ -2674,7 +2674,7 @@ const channel = client.channels.find("name","log")
 });
 
 
-  client.on("guildBanAdd", (guild, member) => {
+  client.on("guildBanAdd", (client, member) => {
   client.setTimeout(() => {
     guild.fetchAuditLogs({
         limit: 1,
