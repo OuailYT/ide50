@@ -1734,6 +1734,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
+     var prefix = "%"
      if (message.author.bot) return;
 if (message.content.startsWith(prefix + "uptime")) {
     let uptime = client.uptime;
@@ -1771,7 +1772,7 @@ if (message.content.startsWith(prefix + "uptime")) {
 
     }
 
-    message.channel.send("`" + `${days} days, ${hours} hrs, ${minutes} min , ${seconds} sec` + "`");
+    message.channel.send("`" + `${days} days, ${hours} hrs, ${minutes} , ${seconds} sec` + "`");
 
 
 }
