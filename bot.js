@@ -2556,7 +2556,7 @@ delete warn[message.author.id];
 });
 
  client.on("roleCreate", rc => {
-  const channel = guild.channels.find("name", "log")
+const channel = client.channels.find("name","log")
   if(channel) {
   var embed = new Discord.RichEmbed()
   .setTitle(rc.guild.name)
@@ -2568,7 +2568,7 @@ delete warn[message.author.id];
   });
   //By S Codes
   client.on("roleDelete",  rd => {
-  const channel = guild.channels.find("name", "log")
+  const channel = client.channels.find("name","log")
   if(channel) {
   var embed = new Discord.RichEmbed()
   .setTitle(rd.guild.name)
@@ -2580,7 +2580,7 @@ delete warn[message.author.id];
   });
 
 client.on("channelCreate",  cc => {
-  const channel = guild.channels.find("name", "log")
+const channel = client.channels.find("name","log")
   if(channel) {
   var embed = new Discord.RichEmbed()
   .setTitle(cc.guild.name)
@@ -2592,7 +2592,7 @@ client.on("channelCreate",  cc => {
   });
 
 client.on("channelDelete",  dc => {
-  const channel = guild.channels.find("name", "log")
+const channel = client.channels.find("name","log")
   if(channel) {
   var embed = new Discord.RichEmbed()
   .setTitle(dc.guild.name)
@@ -2625,7 +2625,7 @@ client.on('guildMemberAdd', member => {
     if (!member || !member.id || !member.guild) return;
     const guild = member.guild;
 
-    const channel = member.guild.channels.find('name', 'log');
+const channel = client.channels.find("name","log")
     if (!channel) return;
     let memberavatar = member.user.avatarURL
     const fromNow = moment(member.user.createdTimestamp).fromNow();
@@ -2660,7 +2660,7 @@ client.on('guildMemberRemove', member => {
 
 client.on('messageDelete', message => {
     if (!message || !message.id || !message.content || !message.guild || message.author.bot) return;
-    const channel = guild.channels.find('name', 'log');
+const channel = client.channels.find("name","log")
     if (!channel) return;
 
     let embed = new Discord.RichEmbed()
@@ -2683,7 +2683,7 @@ client.on('messageDelete', message => {
       .then(audit => {
         let exec = audit.entries.map(a => a.executor.username);
         try {
-          const channel = guild.channels.find('name', 'log');
+const channel = client.channels.find("name","log")
           if (!log) return;
           client.fetchUser(member.id).then(myUser => {
           let embed = new Discord.RichEmbed()
@@ -2711,7 +2711,7 @@ client.on('voiceStateUpdate', (oldM, newM) => {
   let d1 = oldM.serverDeaf;
   let d2 = newM.serverDeaf;
 
-  const channel = guild.channels.find('name', 'log')
+const channel = client.channels.find("name","log")
   if(!ch) return;
 
     oldM.guild.fetchAuditLogs()
@@ -2763,7 +2763,7 @@ client.on('voiceStateUpdate', (oldM, newM) => {
           let exec = audit.entries.map(a => a.executor.username)
           try {
 
-            const channel = guild.channels.find('name', 'log');
+     const channel = client.channels.find("name","log")
             if (!log) return;
             let embed = new Discord.RichEmbed()
               .setColor('RANDOM')
