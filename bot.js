@@ -112,7 +112,6 @@ client.on('message', message => {
         message.delete()
     return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
     }
- }
 });
 
 
