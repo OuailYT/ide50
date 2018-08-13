@@ -2630,6 +2630,7 @@ client.on("channelCreate",  cc => {
   var embed = new Discord.RichEmbed()
   .setTitle(cc.guild.name)
   .setDescription(`***Channel Created Name : *** **${cc.name}** ⬅️`)
+  .setDescription('By', exec, true)
   .setColor(`RANDOM`)
   .setTimestamp(); 
   channel.sendEmbed(embed)
@@ -2661,6 +2662,7 @@ client.on('messageUpdate', (message, newMessage) => {
        .setColor('RANDOM')
        .setDescription(`✏ **Message Edited
 Sender <@${message.author.id}>                                                                                                                         Edited In** <#${message.channel.id}>\n\nBefore Edited:\n \`${message.cleanContent}\`\n\nAfter Edited:\n \`${newMessage.cleanContent}\``)
+       .setDescription('By', exec, true)
        .setTimestamp();
      channel.send({embed:embed});
 
@@ -2678,6 +2680,7 @@ client.on('messageDelete', message => {
        .setColor('RANDOM')
        .setDescription(`🗑️ **Message Deleted**
 **Sender <@${message.author.id}>                                                                                                                        Deleted In** <#${message.channel.id}>\n\n \`${message.cleanContent}\``)
+       .setDescription('By', exec, true)
        .setTimestamp();
      channel.send({embed:embed});
 
@@ -2698,6 +2701,7 @@ client.on('guildMemberAdd', member => {
 	   .setThumbnail(memberavatar)
        .setColor('GREEN')
        .setDescription(`📥 <@${member.user.id}> **Joined To The Server**\n\n`)
+       .setDescription('By', exec, true)
        .setTimestamp();
      channel.send({embed:embed});
 });
@@ -2716,6 +2720,7 @@ client.on('guildMemberRemove', member => {
 	   .setThumbnail(memberavatar)
        .setColor('RED')
        .setDescription(`📤 <@${member.user.id}> **Leave From Server**\n\n`)
+       .setDescription('By', exec, true)
        .setTimestamp();
      channel.send({embed:embed});
 });
