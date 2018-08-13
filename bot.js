@@ -2646,7 +2646,7 @@ client.on("roleDelete", role => {
   })
 
 client.on("channelCreate",  cc => {
-  const channel = cc.client.channels.find("name", "log")
+  const channel = .client.channels.find("name", "log")
   if(channel) {
   var embed = new Discord.RichEmbed()
   .setTitle(cc.client.name)
