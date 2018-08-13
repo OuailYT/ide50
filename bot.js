@@ -2665,34 +2665,17 @@ client.on("roleDelete", role => {
     }, 1000)
   })
 
-client.on("channelDelete", dc => {
-  client.setTimeout(() => {
-    dc.guild.fetchAuditLogs({
-        limit: 1,
-        type: 30
-      })
-      .then(audit => {
-        let exec = audit.entries.map(a => a.executor.username)
-        try {
-
-          let log = dc.guild.channels.find('name', 'log');
-          if (!log) return;
-          let embed = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setTitle('➕ Channel Created')
-            .addField('Channel Name', channel.name, true)
-            .addField('Channel ID', channel.id, true)
-            .addField('By', exec, true)
-            .setTimestamp()
-          log.send(embed).catch(e => {
-            console.log(e);
-          });
-        } catch (e) {
-          console.log(e);
-        }
-      })
-  }, 1000)
-})
+client.on("channelDelete",  dc => {
+  const channel = dc.guild.channels.find("name", "log")
+  if(channel) {
+  var embed = new Discord.RichEmbed()
+  .setTitle(dc.guild.name)
+  .setDescription(`***Channel Deleted Name : *** **${dc.name}** ⬅️`)
+  .setColor(`RANDOM`)
+  .setTimestamp();
+  channel.sendEmbed(embed)
+  }
+  });
 
   
   
