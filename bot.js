@@ -2659,7 +2659,7 @@ client.on("channelDelete",  dc => {
   });
   
   client.on("channelCreate",  cc => {
-  const channel = cc.guild.find("name", "log")
+  const channel = cc.guild.channel.find("name", "log")
   if(channel) {
   var embed = new Discord.RichEmbed()
   .setTitle(cc.guild.name)
