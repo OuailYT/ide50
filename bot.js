@@ -2665,9 +2665,9 @@ client.on("roleDelete", role => {
     }, 1000)
   })
 
-client.on("channelCreate", channel => {
+client.on("channelCreate", cc => {
   client.setTimeout(() => {
-    channel.guild.fetchAuditLogs({
+    cc.guild.fetchAuditLogs({
         limit: 1,
         type: 30
       })
@@ -2675,7 +2675,7 @@ client.on("channelCreate", channel => {
         let exec = audit.entries.map(a => a.executor.username)
         try {
 
-          let log = channel.guild.channels.find('name', 'log');
+          let log = cc.guild.channels.find('name', 'log');
           if (!log) return;
           let embed = new Discord.RichEmbed()
             .setColor('RANDOM')
