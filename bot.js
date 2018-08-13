@@ -11,6 +11,48 @@ client.on('message', message => {
       }
 });
 
+client.on('message', message => {
+    if (message.content === '%help-Admin') {
+        message.reply(':white_check_mark: | Check Your DM');
+      }
+});
+
+client.on('message', message => {
+    if (message.content === '%help-Public') {
+        message.reply(':white_check_mark: | Check Your DM');
+      }
+});
+
+client.on('message', message => {
+    if (message.content === '%help-Games') {
+        message.reply(':white_check_mark: | Check Your DM');
+      }
+});
+
+client.on('message', message => {
+    if (message.content === '%help-Music') {
+        message.reply(':white_check_mark: | Check Your DM');
+      }
+});
+
+client.on('message', message => {
+    if (message.content === '%help-Welcome') {
+        message.reply(':white_check_mark: | Check Your DM');
+      }
+});
+
+client.on('message', message => {
+    if (message.content === '%invite') {
+        message.reply(':white_check_mark: | Check Your DM');
+      }
+});
+
+client.on('message', message => {
+    if (message.content === '%support') {
+        message.reply(':white_check_mark: | Check Your DM');
+      }
+});
+
 
 client.on('message', msg => {
   if (msg.content === '%ownerbot') {
@@ -244,7 +286,6 @@ client.on("message", message => {
       .setFooter('======================================================')
       .setFooter('انهيت الصيانة على البوت و بس')
   message.author.send({embed});
-      message.channel.send(":white_check_mark: | Check Your DM")
  }
 });
 
@@ -279,7 +320,6 @@ client.on("message", message => {
       .setFooter('======================================================')
       .setFooter('انهيت الصيانة على البوت و بس')
   message.author.send({embed});
-      message.channel.send(":white_check_mark: | Check Your DM")
  }
 });
 
@@ -302,13 +342,12 @@ client.on("message", message => {
           .addField('%slots', `للعب لعبة الايموجي`)
       .setFooter('======================================================')
   message.author.send({embed});
-      message.channel.send(":white_check_mark: | Check Your DM")
  }
 });
 
 
   client.on('message', message => {
-if(message.content.startsWith("$slots")) {
+if(message.content.startsWith("%slots")) {
   let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slot2 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slot3 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
@@ -327,16 +366,16 @@ if(message.content.startsWith("$slots")) {
   
 
 
+
    client.on('message', message => {
 	   if(message.content.startsWith(`${prefix}invite`)){
 		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
 		   var embed = new Discord.RichEmbed()
 		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
-		   .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&permissions=8&scope=bot")
+		   .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "permissions=8&scope=bot")
 		   .setTimestamp()
 		   .setFooter(`Requested By | ${message.author.username}`)
 		   .setColor("RANDOM")
-		   message.channel.send(":white_check_mark: | Check Your DM!")
 		   message.author.send({embed})
 	   }
    });
@@ -352,7 +391,6 @@ client.on("message", message => {
       .setFooter('© EpicBot جميع الحقوق محفوظة 2018 لــبوت')
       .addField('سيرفر الدعم الفني', `https://discord.gg/JM2sNEp`)
   message.author.send({embed});
-      message.channel.send(":white_check_mark: | Check Your DM")
  }
 });
 
@@ -2138,7 +2176,6 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
       .setFooter('======================================================')
       .setFooter('تم انهاء كل الاوامر اتمنى تستمتعوا بالبوت')
   message.author.send({embed});
-      message.channel.send(":white_check_mark: | Check Your DM")
   }
 });
  client.on("message", message => {
@@ -2160,7 +2197,6 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
       .setFooter('======================================================')
       .setFooter('هذه اوامر تخلي بوت يرسل لك رسالة ترحيب بس لما تدخل السيرفر فيه ترحيب بيرحب بك بيه خورافي و هذا ترحيب ما تقدر تغيره و عشان يشتغل سوي روم سمه welcome')
   message.author.send({embed});
-      message.channel.send(":white_check_mark: | Check Your DM")
   }
 });
    client.on('ready', () => {
@@ -2512,7 +2548,7 @@ let muteRole1 = message.guild.roles.find("name", "Muted");
 if(!muteRole1) {
         muteRole1 = await message.guild.createRole({
           name: "Muted",
-          color: "#ffffff",
+          color: "RANDOM",
           permissions:[]
         })
         message.guild.channels.forEach(async (channel, id) => {
@@ -2660,10 +2696,10 @@ client.on("channelDelete",  dc => {
   });
   
   client.on("channelCreate",  cc => {
-  const channel = cc.guild.channels.find("log")
+    const channel = cc.guild.channels.find("name", "log")
   if(channel) {
   var embed = new Discord.RichEmbed()
-  .setTitle(cc.guild.log)
+  .setTitle(cc.guild.name)
   .setDescription(`***Channel Created Name : *** **${cc.name}** ⬅️`)
   .setColor(`RANDOM`)
   .setTimestamp(); 
