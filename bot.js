@@ -298,7 +298,7 @@ client.on("message", message => {
 	  .addField('%كت تويت', `لعبة كت تويت`)
 	  .addField('%لو خيروك', `لعبة لو خيروك`)
           .addField('%قرعة', `لاستعمال القرعة`)
-          .addField('%slots', `للعب لعبة الايموجي`)
+          .addField('%emoji', `للعب لعبة الايموجي`)
       .setFooter('======================================================')
   message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
@@ -307,7 +307,7 @@ client.on("message", message => {
 
 
   client.on('message', message => {
-if(message.content.startsWith("%slots")) {
+if(message.content.startsWith("%emoji")) {
   let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slot2 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slot3 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
