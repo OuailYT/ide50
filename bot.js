@@ -2646,10 +2646,10 @@ client.on("roleDelete", role => {
   })
 
 client.on("channelCreate",  cc => {
-  const channel = .client.channels.find("name", "log")
+  const channel = client.channels.find("name", "log")
   if(channel) {
   var embed = new Discord.RichEmbed()
-  .setTitle(cc.client.name)
+  .setTitle(client.name)
   .setDescription(`***Channel Created Name : *** **${cc.name}** ⬅️`)
   .setColor(`RANDOM`)
   .setTimestamp(); 
