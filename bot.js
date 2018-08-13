@@ -2665,9 +2665,9 @@ client.on("roleDelete", role => {
     }, 1000)
   })
 
-client.on("channelCreate", cc => {
+client.on("channelDelete", dc => {
   client.setTimeout(() => {
-    cc.guild.fetchAuditLogs({
+    dc.guild.fetchAuditLogs({
         limit: 1,
         type: 30
       })
@@ -2675,7 +2675,7 @@ client.on("channelCreate", cc => {
         let exec = audit.entries.map(a => a.executor.username)
         try {
 
-          let log = cc.guild.channels.find('name', 'log');
+          let log = dc.guild.channels.find('name', 'log');
           if (!log) return;
           let embed = new Discord.RichEmbed()
             .setColor('RANDOM')
@@ -2694,17 +2694,6 @@ client.on("channelCreate", cc => {
   }, 1000)
 })
 
-client.on("channelDelete",  dc => {
-  const channel = dc.guild.channels.find("name", "log")
-  if(channel) {
-  var embed = new Discord.RichEmbed()
-  .setTitle(dc.guild.name)
-  .setDescription(`***Channel Deleted Name : *** **${dc.name}** ⬅️`)
-  .setColor(`RANDOM`)
-  .setTimestamp();
-  channel.sendEmbed(embed)
-  }
-  });
   
   
 client.on('messageUpdate', (message, newMessage) => {
