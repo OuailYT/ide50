@@ -272,7 +272,7 @@ client.on("message", message => {
           .addField('%owner', `لارسال رسالة لاونر سيرفر`)
           .addField('%suggest', `لاقتراح شئ و لازم يكون فيه روم اسمه suggestions `)
           .addField('%uptime', `عشان تشوف البوت شغال من متى`)
-          .addField('%Botinfo', `عشان تعرف معلومات البوت`)
+          .addField('%botinfo', `عشان تعرف معلومات البوت`)
           .addField('%color', `عشان تغير لونك ولازم يكون فيه رتب باسم الالوان حقة القلوب الي في صورة الامر اسماء الالوان احمر red اصفر yellow بنفسجي y2 ازرق لبني y3 اخضر y1 اسود black`)
           .addField('%contact', `لارسال رسالة لصاحب البوت`)
 	  .addField('%cat', `يجبلك صورة قطة`)
@@ -299,11 +299,31 @@ client.on("message", message => {
 	  .addField('%كت تويت', `لعبة كت تويت`)
 	  .addField('%لو خيروك', `لعبة لو خيروك`)
           .addField('%قرعة', `لاستعمال القرعة`)
+          .addField('%slots', `للعب لعبة الايموجي`)
       .setFooter('======================================================')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM")
  }
 });
+
+
+  client.on('message', message => {
+if(message.content.startsWith(prefix + "slots")) {
+  let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+  let slot2 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+  let slot3 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+  let slots1 = slot1[Math.floor(Math.random()*slot1.lenght)];
+  let slots2 = slot2[Math.floor(Math.random()*slot2.lenght)];
+  let slots3 = slot3[Math.floor(Math.random()*slot3.lenght)];
+  let we;
+  if(slots1 === slots2 === slots3) {
+    we = "Win!"
+  } else {
+    we = "Lose!"
+  }
+  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
+}
+})
 
 
    client.on('message', message => {
@@ -1638,7 +1658,7 @@ message.channel.sendEmbed(embed).then();
 
 
 client.on('message', message => {
-    if (message.content.startsWith("%Botinfo")) {
+    if (message.content.startsWith("%botinfo")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
@@ -1653,6 +1673,7 @@ client.on('message', message => {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
                   .addField('``My Prefix``' , `%` , true)
                   .addField('``My Language``' , `[ Java Script ]` , true)
+                  .addField("Created on", bot.user.createdAt)
                   .setFooter('By |<@385103221804236800>')
     })
 }
