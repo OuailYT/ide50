@@ -84,9 +84,9 @@ client.on('message', msg => {
            let args = msg.content.split(" ").slice(1);
           if (!msg.mentions.members.first()) return msg.reply('منشن الشخص المحدد')
           if (!args[1]) return msg.reply('``اكتب السبب``')
-          //غير اسم الروم او سوي روم بذا الاسم
+
           if (msg.guild.channels.find('name', 'warns')) {
-            //اذا غيرت فوق غير هنا كمان
+
             msg.guild.channels.find('name', 'warns').send(`
           تم اعطائك تنبيه : ${msg.mentions.members.first()}
           لأنك قمت بما يلي
@@ -128,7 +128,7 @@ client.on('message', message => {
       try{
         muterole = await message.guild.createRole({
           name: "Muted",
-          color: "#000000",
+          color: "RANDOM",
           permissions:[]
         })
         message.guild.channels.forEach(async (channel, id) => {
@@ -338,25 +338,6 @@ client.on("message", message => {
 
 
 
-const TOKEN = "";
-
-function commandIs(str, msg){
-    return msg.content.toLowerCase().startsWith('%' + str);
-}
-
-function pluck(array) {
-    return array.map(function(item) { return item["name"]; });
-}
-
-function hasRole(mem, role) {
-    if(pluck(mem.roles).includes(role)){
-        return true;
-    } else {
-        return false;
-    }
-
-  }
-
 
 
 
@@ -382,7 +363,7 @@ client.on('message', message => {
      if (message.content === "%ping") {
       const embed = new Discord.RichEmbed()
 
-  .setColor("#FF0000")
+  .setColor("RANDOM")
   .addField('``سرعة أتصال الــبوت`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
                  .setFooter(` EpicBot
  .`, 'https://cdn.discordapp.com/attachments/445335688628666388/473879902945542144/Epic.png')
@@ -483,8 +464,7 @@ client.on('message', message => {
   if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**I Don't Have ` BAN_MEMBERS ` Permission**");
   let user = message.mentions.users.first();
   let reason = message.content.split(" ").slice(2).join(" ");
-  /*let b5bzlog = client.channels.find("name", "5bz-log");
-  if(!b5bzlog) return message.reply("I've detected that this server doesn't have a 5bz-log text channel.");*/
+
   if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
   if(!reason) return message.reply ("**اكتب سبب الطرد**");
   if (!message.guild.member(user)
@@ -943,7 +923,7 @@ const Za7f = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('xHexon Bot' ,
+ .addField('EpicBot' ,
   `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[38ab] Send By: ' + message.author.username)
@@ -1108,7 +1088,7 @@ client.on('message', function(msg) {
 
       .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
   .setAuthor(message.author.username, message.guild.iconrURL)
-    .setColor(0x164fe3)
+    .setColor(RANDOM)
     .setImage(message.guild.iconURL)
     .setURL(message.guild.iconrURL)
                     .setTimestamp()
@@ -1165,7 +1145,7 @@ let args = message.content.split(" ").slice(1);
 
    var embed = new Discord.RichEmbed()
         .setTitle('تم مسح الشات بنجاح :white_check_mark: ')
-        .setColor('RED')
+        .setColor('RANDOM')
        message.channel.sendEmbed(embed)
 
 };
@@ -1280,10 +1260,10 @@ if(message.content.startsWith(prefix + 'trans')) {
             message.channel.send(`**Usage: ${prefix}trans @someone amount**`);
          return;
            }
-        // We should also make sure that args[0] is a number
+
         if (isNaN(args[0])) {
             message.channel.send(`**Usage: ${prefix}trans @someone amount**`);
-            return; // Remember to return if you are sending an error message! So the rest of the code doesn't run.
+            return;
              }
              if(profile[message.author.id].credits < args[0]) return message.channel.send("**Your Credits is not enough  that**")
 if(args[0].startsWith("-")) return  message.channel.send('**!! I Cant Do it**');
