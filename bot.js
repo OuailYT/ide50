@@ -2649,7 +2649,7 @@ client.on("channelCreate",  cc => {
   const channel = cc.client.channels.find("name", "log")
   if(channel) {
   var embed = new Discord.RichEmbed()
-  .setTitle(cc.guild.name)
+  .setTitle(cc.client.name)
   .setDescription(`***Channel Created Name : *** **${cc.name}** ⬅️`)
   .setColor(`RANDOM`)
   .setTimestamp(); 
