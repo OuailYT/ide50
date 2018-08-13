@@ -2625,14 +2625,14 @@ client.on("channelCreate",  cc => {
   }
   });
 
-   client.on("channelDelete",  cd => {
+client.on("channelDelete",  dc => {
   const channel = dc.guild.channels.find("name", "log")
   if(channel) {
   var embed = new Discord.RichEmbed()
   .setTitle(dc.guild.name)
-  .setDescription(`***Channel Deleted Name : *** **${cd.name}** ⬅️`)
+  .setDescription(`***Channel Deleted Name : *** **${dc.name}** ⬅️`)
   .setColor(`RANDOM`)
-  .setTimestamp(); 
+  .setTimestamp();
   channel.sendEmbed(embed)
   }
   });
