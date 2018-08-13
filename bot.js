@@ -2639,15 +2639,11 @@ const channel = client.channels.find("name","log")
 client.on('guildMemberRemove', member => {
     if (!member || !member.id || !member.guild) return;
     const client = member.client;
-
    const channel = client.channels.find("name","log")
     if (!channel) return;
-    let memberavatar = member.user.avatarURL
-    const fromNow = moment(member.joinedTimestamp).fromNow();
-
     let embed = new Discord.RichEmbed()
        .setAuthor(`${member.user.tag}`, member.user.avatarURL)
-	   .setThumbnail(memberavatar)
+       .setThumbnail(member.user.avatarURL)
        .setColor('RANDOM')
        .setDescription(`📤 <@${member.user.id}> **Leave From Server**\n\n`)
        .setTimestamp();
