@@ -2659,10 +2659,10 @@ client.on("channelDelete",  dc => {
   });
   
   client.on("channelCreate",  cc => {
-  const channel = cc.guild.channel.find("name", "log")
+  const channel = cc.guild.channels.find("log")
   if(channel) {
   var embed = new Discord.RichEmbed()
-  .setTitle(cc.guild.name)
+  .setTitle(cc.guild.log)
   .setDescription(`***Channel Created Name : *** **${cc.name}** ⬅️`)
   .setColor(`RANDOM`)
   .setTimestamp(); 
