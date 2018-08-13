@@ -2556,7 +2556,7 @@ delete warn[message.author.id];
 });
 
  client.on("roleCreate", rc => {
-const channel = client.channels.find("name","log")
+const channel = guild.channels.find("name","log")
   if(channel) {
   var embed = new Discord.RichEmbed()
   .setTitle(rc.client.name)
@@ -2568,7 +2568,7 @@ const channel = client.channels.find("name","log")
   });
 
   client.on("roleDelete",  rd => {
-  const channel = client.channels.find("name","log")
+  const channel = guild.channels.find("name","log")
   if(channel) {
   var embed = new Discord.RichEmbed()
   .setTitle(rd.client.name)
@@ -2580,7 +2580,7 @@ const channel = client.channels.find("name","log")
   });
 
 client.on("channelCreate",  cc => {
-const channel = client.channels.find("name","log")
+const channel = guild.channels.find("name","log")
   if(channel) {
   var embed = new Discord.RichEmbed()
   .setTitle(cc.client.name)
@@ -2607,7 +2607,7 @@ const channel = client.channels.find("name","log")
   client.on('messageUpdate', (message, newMessage) => {
     if (message.content === newMessage.content) return;
     if (!message || !message.id || !message.content || !message.guild || message.author.bot) return;
-    const channel = client.channels.find('name', 'log');
+    const channel = guild.channels.find('name', 'log');
     if (!channel) return;
 
     let embed = new Discord.RichEmbed()
@@ -2683,7 +2683,7 @@ const channel = client.channels.find("name","log")
       .then(audit => {
         let exec = audit.entries.map(a => a.executor.username);
         try {
-const channel = client.channels.find("name","log")
+const channel = guild.channels.find("name","log")
           if (!log) return;
           client.fetchUser(member.id).then(myUser => {
           let embed = new Discord.RichEmbed()
@@ -2711,7 +2711,7 @@ client.on('voiceStateUpdate', (oldM, newM) => {
   let d1 = oldM.serverDeaf;
   let d2 = newM.serverDeaf;
 
-const channel = client.channels.find("name","log")
+const channel = guild.channels.find("name","log")
   if(!ch) return;
 
     oldM.guild.fetchAuditLogs()
