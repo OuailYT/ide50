@@ -11,49 +11,6 @@ client.on('message', message => {
       }
 });
 
-client.on('message', message => {
-    if (message.content === '%help-Admin') {
-        message.reply(':white_check_mark: | Check Your DM');
-      }
-});
-
-client.on('message', message => {
-    if (message.content === '%help-Public') {
-        message.reply(':white_check_mark: | Check Your DM');
-      }
-});
-
-client.on('message', message => {
-    if (message.content === '%help-Games') {
-        message.reply(':white_check_mark: | Check Your DM');
-      }
-});
-
-client.on('message', message => {
-    if (message.content === '%help-Music') {
-        message.reply(':white_check_mark: | Check Your DM');
-      }
-});
-
-client.on('message', message => {
-    if (message.content === '%help-Welcome') {
-        message.reply(':white_check_mark: | Check Your DM');
-      }
-});
-
-client.on('message', message => {
-    if (message.content === '%invite') {
-        message.reply(':white_check_mark: | Check Your DM');
-      }
-});
-
-client.on('message', message => {
-    if (message.content === '%support') {
-        message.reply(':white_check_mark: | Check Your DM');
-      }
-});
-
-
 client.on('message', msg => {
   if (msg.content === '%ownerbot') {
     msg.reply('**OwnerBot <@385103221804236800>**');
@@ -285,6 +242,7 @@ client.on("message", message => {
 	  .addField('%say', `البوت يكرر الكلام الي انت تقوله بدون امبد`)
       .setFooter('======================================================')
       .setFooter('انهيت الصيانة على البوت و بس')
+  message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
  }
 });
@@ -319,6 +277,7 @@ client.on("message", message => {
 	  .addField('%cat', `يجبلك صورة قطة`)
       .setFooter('======================================================')
       .setFooter('انهيت الصيانة على البوت و بس')
+  message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
  }
 });
@@ -341,6 +300,7 @@ client.on("message", message => {
           .addField('%قرعة', `لاستعمال القرعة`)
           .addField('%slots', `للعب لعبة الايموجي`)
       .setFooter('======================================================')
+  message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
  }
 });
@@ -376,6 +336,7 @@ if(message.content.startsWith("%slots")) {
 		   .setTimestamp()
 		   .setFooter(`Requested By | ${message.author.username}`)
 		   .setColor("RANDOM")
+  message.channel.send(`:white_check_mark: | Check Your DM`)
 		   message.author.send({embed})
 	   }
    });
@@ -390,6 +351,7 @@ client.on("message", message => {
       .setColor("RANDOM")
       .setFooter('© EpicBot جميع الحقوق محفوظة 2018 لــبوت')
       .addField('سيرفر الدعم الفني', `https://discord.gg/JM2sNEp`)
+  message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
  }
 });
@@ -1866,6 +1828,26 @@ client.on("message", message => {
 ❧ %help-Music ➺ ⦁***اوامر الاغاني*** ⦁
 
 ❧ %help-Welcome ➺ ⦁***معلومات الترحيب في البوت***⦁
+
+❧ %help2 ➺ ⦁كيف تظبت اللوج و الولكم⦁
+─════════════ {✯EpicBot✯} ════════════─
+      `)
+   message.channel.sendEmbed(embed)
+
+   }
+   });
+
+client.on("message", message => {
+    var prefix = "%";
+ if (message.content === "%help2") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setDescription(`
+
+             Please Choose:
+
+─════════════ {✯EpicBot✯} ════════════─
+عشان يشتغل اللوج في بوت سوي روم سمه log و راح يشتغل تلقائيا و الترحيب و الوداع سوي روم سمه welcome و راح يشتغل تلقائيا
 ─════════════ {✯EpicBot✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
@@ -2175,6 +2157,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
           .addField('%queue', `لمعرفة قآئمة التشغيل`)
       .setFooter('======================================================')
       .setFooter('تم انهاء كل الاوامر اتمنى تستمتعوا بالبوت')
+  message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
   }
 });
@@ -2195,7 +2178,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
           .addField('%wlc 9', `يخلي البوت يرحب بك مثل الباقي`)
           .addField('%wlc 10', `يخلي البوت يرحب بك مثل الباقي`)
       .setFooter('======================================================')
-      .setFooter('هذه اوامر تخلي بوت يرسل لك رسالة ترحيب بس لما تدخل السيرفر فيه ترحيب بيرحب بك بيه خورافي و هذا ترحيب ما تقدر تغيره و عشان يشتغل سوي روم سمه welcome')
+  message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
   }
 });
