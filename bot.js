@@ -2622,9 +2622,6 @@ const channel = client.channels.find("name","log")
 });
 
 client.on('guildMemberAdd', member => {
-    if (!member || !member.id || !member.client) return;
-    const client = member.client;
-
 const channel = client.channels.find("name","log")
     if (!channel) return;
     let embed = new Discord.RichEmbed()
