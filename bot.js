@@ -1273,6 +1273,8 @@ let args = message.content.split(" ").slice(1);
        message.channel.sendEmbed(embed)
  };
  });
+
+
  client.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', 'welcome');
     let memberavatar = member.user.avatarURL
