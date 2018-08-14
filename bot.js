@@ -343,8 +343,7 @@ client.on("message", message => {
  if (message.content === "%help-Admin") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© EpicBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
-      .setFooter('اوامر الادمنيه')
+      .setFooter('[❖═════اومر ادمن═══════❖]')
 	  .addField('%bc', `لخاصية البرودكستات`)
 	  .addField('%kick', `لخاصية طرد`)
 	  .addField('%ban', `عشان تعطي احد حظر من سيرفر للابد`)
@@ -367,7 +366,7 @@ client.on("message", message => {
 	  .addField('%say', `البوت يكرر الكلام الي انت تقوله بدون امبد`)
 	  .addField('%giveaway', `عشان تصنع جيف اواي`)
       .setFooter('======================================================')
-      .setFooter('انهيت الصيانة على البوت و بس')
+      .setFooter('[❖═════اومر ادمن═══════❖]')
   message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
  }
@@ -378,8 +377,7 @@ client.on("message", message => {
  if (message.content === "%help-Public") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© EpicBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
-           .setFooter('اوامر الاعضاء')
+           .setFooter('[❖═════اومر الاعضاء═══════❖]')
           .addField('%invite', `لاضافة البوت الى سيرفرك`)
 	  .addField('%roles', `لمعرفة الرتب الي في السيرفر`)
           .addField('%avatar', `يجبلك الافتار حقك يعني صورة حسابك`)
@@ -404,8 +402,7 @@ client.on("message", message => {
           .addField('%color', `عشان تاخذ اللون`)
           .addField('%contact', `لارسال رسالة لصاحب البوت`)
 	  .addField('%cats', `يجيب لك صور قطط`)
-      .setFooter('======================================================')
-      .setFooter('انهيت الصيانة على البوت و بس')
+      .setFooter('[❖═════اومر الاعضاء═══════❖]')
   message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
  }
@@ -418,8 +415,7 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© EpicBot جميع الحقوق محفوظة 2018 لــبوت')
-      .setFooter('======================================================')
-      .setFooter('الالعاب')
+      .setFooter('[❖═════اومر الالعاب═══════❖]')
       .addField('%صراحة', `لعبة صراحه`)
 	  .addField('%عقاب', `لعبة عقاب`)
       .addField('%خواطر', `لعبة خواطر`)
@@ -431,7 +427,7 @@ client.on("message", message => {
           .addField('%8ball', `عشان تسال 8ball`)
           .addField('%فكك', `للعب لعبة فكك`)
           .addField('%نقاطي', `لمعرفة نقاطك في لعبة فكك فقط`)
-      .setFooter('======================================================')
+      .setFooter('[❖═════اومر العاب═══════❖]')
   message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
  }
@@ -1225,6 +1221,18 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
 });
 
 
+
+client.on('message', message => {
+if (message.content.startsWith(prefix + 'هل تعلم')) {
+const p = ['https://cdn.discordapp.com/attachments/479044877745782801/479045993132720128/download_1.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046003937247253/download_2.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046011956887552/download_3.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046019904962562/download_4.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046030214692864/download_5.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046039794352151/download_6.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046055581974549/download_7.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046065367154712/download.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046084442980354/images_1.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046105674547216/images_4.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046119838580756/images_6.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046131796672513/images_7.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046143318425621/images_8.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046152491368448/images_9.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046158979825686/images_10.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046162247188498/images_11.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046196434960416/images_12.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046214571130882/images_13.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046219428003871/images_15.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046219528929290/images_14.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046222045511685/images_16.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046228047560736/images_19.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046225086382081/images_18.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046230794829834/images_20.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046233533710336/images_21.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046289477337089/images_23.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046293436629041/images_24.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046294925606914/images_25.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046303330992169/images_26.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046307072311317/images_27.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046315100340224/images_28.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046325619392537/images_29.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046333114875907/images_30.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046334825889807/images_31.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046338718466058/images_32.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046340379148288/images_33.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046342795198484/images_34.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046349644365827/images.jpg','https://cdn.discordapp.com/attachments/479044877745782801/479046666146676746/images_22.jpg'];
+client.on('message', message => {
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+    if(command == prefix + هل تعلم) {
+        message.channel.sendFile(`${p[Math.floor(Math.random() * p.length)]}`);
+    }
+});
   
 
 
@@ -1976,8 +1984,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
  if (message.content === "%help-Music") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© EpicBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
-      .setFooter('اوامر الاغاني')
+      .setFooter('[[❖═════اومر اغاني═══════❖]]')
 	  .addField('%play', `لتشغيل أغنية برآبط أو بأسم`)
 	  .addField('%skip', `لتجآوز الأغنية الحآلية`)
 	  .addField('%pause', `إيقآف الأغنية مؤقتا`)
@@ -1986,8 +1993,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
           .addField('%stop', `لإخرآج البوت من الروم`)
           .addField('%nb', `لمعرفة الأغنية المشغلة حآليا`)
           .addField('%queue', `لمعرفة قآئمة التشغيل`)
-      .setFooter('======================================================')
-      .setFooter('تم انهاء كل الاوامر اتمنى تستمتعوا بالبوت')
+      .setFooter('[❖═════اومر اغاني═══════❖]')
   message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
   }
@@ -1996,8 +2002,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
  if (message.content === "%help-Welcome") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© EpicBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
-      .setFooter('Wlc')
+      .setFooter('[❖═════اومر الترحيب═══════❖]')
 	  .addField('%wlc 1', `يخلي البوت يرسل لك ترحيب بشكل حلو`)
 	  .addField('%wlc 2', `يخلي البوت يرسل لك ترحيب بشكل تاني خورافي`)
 	  .addField('%wlc 3', `يخلي البوت يرسل لك ترحيب بشكل غير الي فاتوا`)
@@ -2008,7 +2013,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
           .addField('%wlc 8', `يخلي البوت يرحب بك مثل الباقي`)
           .addField('%wlc 9', `يخلي البوت يرحب بك مثل الباقي`)
           .addField('%wlc 10', `يخلي البوت يرحب بك مثل الباقي`)
-      .setFooter('======================================================')
+      .setFooter('[❖═════اومر الترحيب═══════❖]')
   message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
   }
