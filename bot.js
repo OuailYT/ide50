@@ -1209,8 +1209,8 @@ var fkk =[
 
    client.on("message", async message => {
     if(message.content == prefix+"فكك"){
-        if(client.has(message.guild.id)) return message.channel.send("هناك جلسة .")
-        client.add(message.guild.id)
+        if(UserBlocked.has(message.guild.id)) return message.channel.send("هناك جلسة .")
+        UserBlocked.add(message.guild.id)
         var ask = fkk[Math.floor(Math.random() * fkk.length)];
         let embed = new Discord.RichEmbed()
         .setTitle('لعبة فكك')
@@ -1219,7 +1219,7 @@ var fkk =[
         .setDescription(ask.f);
         message.channel.sendEmbed(embed).then(msg=> msg.delete(200000))
         const msgs = await message.channel.awaitMessages(msg => msg.author.id !== client.user.id ,{maxMatches:1,time:100000});
-            client.delete(message.guild.id)
+            UserBlocked.delete(message.guild.id)
         msgs.forEach(result => {
            if(result.author.id == client.user.id) return;
            if(result.content == "فكك") return
