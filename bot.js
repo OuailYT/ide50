@@ -87,7 +87,7 @@ client.on('message',async message => {
   if(message.content.startsWith(prefix + "giveaway")) {
      //return message.channel.send(':heavy_multiplication_x:| **هذا الامر معطل حاليا.. ``حاول في وقت لاحق``**');
     if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **يجب أن يكون لديك خاصية التعديل على السيرفر**');
-    message.channel.send(`:eight_pointed_black_star:| **منشن الروم الذي تريد به القيف اواي**`).then(msgg => {
+    message.channel.send(`:eight_pointed_black_star:| **اكتب اسم الروم الذي تريد به القيف اواي**`).then(msgg => {
       message.channel.awaitMessages(filter, {
         max: 1,
         time: 20000,
