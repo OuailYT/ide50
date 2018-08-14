@@ -1230,12 +1230,13 @@ client.on('message', message => {
   let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
 
-   if(msg.content.startsWith ('%هل تعلم')) {
+if (message.content.startsWith('%هل تعلم')) {
         message.channel.sendFile(`${p[Math.floor(Math.random() * p.length)]}`);
     }
-});
-  
 
+
+  
+});
 
 
  client.on('message', function(msg) {
