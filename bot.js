@@ -3801,6 +3801,7 @@ client.on('message', message => {
     let cont = message.content.slice(prefix.length).split(" "); 
     let args = cont.slice(1); 
     if (msg.startsWith(prefix + 'weather')) { 
+    const weather = require('weather-js');
 
         weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) {
             if (err) message.channel.send(err);
