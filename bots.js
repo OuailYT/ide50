@@ -77,7 +77,7 @@ client.on("roleDelete", role => {
             let log = re.guild.channels.find('name', 'log');
             if (!log) return;
             let embed = new Discord.RichEmbed()
-              .setColor('BLACK')
+              .setColor('RANDOM')
               .setTitle("✏  Role Name Updated")
               .addField("Old",`${re.name}`,true)
               .addField("New",`${updated.name}`,true )
@@ -94,17 +94,64 @@ client.on("roleDelete", role => {
     }, 1000)
   })
 
-client.on("channelDelete",  dc => {
-  const channel = dc.guild.channels.find("name", "log")
-  if(channel) {
-  var embed = new Discord.RichEmbed()
-  .setTitle(dc.guild.name)
-  .setDescription(`***Channel Deleted Name : *** **${dc.name}** ⬅️`)
-  .setColor(`RANDOM`)
-  .setTimestamp();
-  channel.sendEmbed(embed)
-  }
-  });
+client.on("channelCreate", cc => {
+  client.setTimeout(() => {
+    cc.guild.fetchAuditLogs({
+        limit: 1,
+        type: 30
+      })
+      .then(audit => {
+        let exec = audit.entries.map(a => a.executor.username)
+        try {
+
+          let log = cc.guild.channels.find('name', 'log');
+          if (!log) return;
+          let embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('➕ Channel Created')
+            .addField('Channel Name', cc.name, true)
+            .addField('Channel ID', cc.id, true)
+            .addField('By', exec, true)
+            .setTimestamp()
+          log.send(embed).catch(e => {
+            console.log(e);
+          });
+        } catch (e) {
+          console.log(e);
+        }
+      })
+  }, 1000)
+})
+
+
+client.on("channelDelete", cd => {
+  client.setTimeout(() => {
+    cd.guild.fetchAuditLogs({
+        limit: 1,
+        type: 30
+      })
+      .then(audit => {
+        let exec = audit.entries.map(a => a.executor.username)
+        try {
+
+          let log = cd.guild.channels.find('name', 'log');
+          if (!log) return;
+          let embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('❌ Channel Deleted')
+            .addField('Channel Name', cd.name, true)
+            .addField('Channel ID', cd.id, true)
+            .addField('By', exec, true)
+            .setTimestamp()
+          log.send(embed).catch(e => {
+            console.log(e);
+          });
+        } catch (e) {
+          console.log(e);
+        }
+      })
+  }, 1000)
+})
 
   
   
