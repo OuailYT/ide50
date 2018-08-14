@@ -1196,6 +1196,7 @@ msg.channel.send(`${item.type}`).then(() => {
         message.channel.send(`${collected.first().author} ✅ **مبروك لقد كسبت نقطه
 لمعرفة نقطاك الرجاء كتابة %نقاطي**`);
         console.log(`[Typing] ${collected.first().author} typed the word.`);
+            let points = {}
             let userData = points[message.author.id];
             userData.points++;
           })
@@ -1207,6 +1208,8 @@ msg.channel.send(`${item.type}`).then(() => {
     })
 }
 });
+
+
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'نقاطي')) {
     if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
