@@ -169,6 +169,48 @@ client.on('message', msg => {
 })
 
 
+  client.on('message', async ReBeLL => {
+if(ReBeLL.author.bot) return;
+if (ReBeLL.channel.guild) {
+if (ReBeLL.content.startsWith(prefix + `8ball`)) {
+    let argsReBeL = ReBeLL.content.split(' ').slice(1).join(' ');
+    let authorReBeL = ReBeLL.author.username;
+
+    // https://en.wikipedia.org/wiki/Magic_8-Ball
+    let ReBeL = [
+
+"هذا مؤكد.",
+        "إنه بالتأكيد كذلك" ,
+        "بدون أدنى شك.",
+        "نعم بالتأكيد.",
+        "يمكنك الاعتماد عليه.",
+        "كما أرى أنه نعم.",
+        "على الأرجح.",
+        "توقعات جيدة.",
+        "نعم فعلا.",
+        "وتشير الدلائل إلى نعم.",
+
+
+        "الرد المحاولة مرة أخرى ضبابية.",
+        "اسأل مرة اخرى لاحقا.",
+        "الأفضل أن لا أقول لكم الآن.",
+        "لا يمكن التنبؤ الآن.",
+        "التركيز والمحاولة مرة أخرى." ,
+
+
+        "لا تعتمد على." ,
+        "ردي هو لا.",
+        "وتقول مصادري لا.",
+        "أوتلوك ليس جيد بما فيه الكفاية.",
+        "مشكوك فيه جدا."
+    ]
+    let randomReBeL = Math.floor(Math.random() * ReBeL.length);
+
+    if (!argsReBeL) return ReBeLL.reply("ask him something.");
+    ReBeLL.channel.send(`\:8ball\: | ${ReBeL[randomReBeL]} **${authorReBeL}**`);
+}}});
+  
+
   client.on('message', message => {
      if(message.content.startsWith(prefix +"bans")) {
         message.guild.fetchBans()
@@ -373,6 +415,7 @@ client.on("message", message => {
 	  .addField('%لو خيروك', `لعبة لو خيروك`)
           .addField('%قرعة', `لاستعمال القرعة`)
           .addField('%emoji', `للعب لعبة الايموجي`)
+          .addField('%8ball', `عشان تسال 8ball`)
       .setFooter('======================================================')
   message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
