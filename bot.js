@@ -1222,6 +1222,10 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
   }
 
   
+});
+
+
+  
 
 
 
