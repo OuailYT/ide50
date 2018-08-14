@@ -1194,6 +1194,7 @@ msg.channel.send(`${item.type}`).then(() => {
         console.log(`[Typing] ${collected.first().author} typed the word.`);
             let points = {}
             let userData = points[message.author.id];
+            let userdata = require('./fkk/fkkPTS.json');
             userData.points++;
           })
           .catch(collected => {
@@ -1713,6 +1714,7 @@ ${args}
       .setDescription(`
  ─════════════ {✯EpicBot✯} ════════════─
 عشان تفعل الولكم: سوي روم سمه welcome و راح يشتغل تلقائيا الترحيب و الوداع
+
 عشان يشتعل اللوج : سوي روم سمه log و راح يشتغل تلقائيا
 ─════════════ {✯EpicBot✯} ════════════─
       `)
