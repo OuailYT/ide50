@@ -3796,7 +3796,6 @@ setInterval(function(){})
 });
 
 
-const weather = require('weather-js');//npm install weather-js
 client.on('message', message => {
     let msg = message.content.toUpperCase(); 
     let cont = message.content.slice(prefix.length).split(" "); 
@@ -3818,7 +3817,7 @@ client.on('message', message => {
 
            
             const embed = new Discord.RichEmbed()
-.setDescription(`**${current.skytext}**`) 
+               .setDescription(`**${current.skytext}**`) 
                 .setAuthor(`Weather for ${current.observationpoint}`) 
                 .setThumbnail(current.imageUrl) 
                 .setColor(0x00AE86) 
