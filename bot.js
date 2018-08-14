@@ -398,7 +398,10 @@ client.on("message", message => {
           .addField('%suggest', `لاقتراح شئ و لازم يكون فيه روم اسمه suggestions `)
           .addField('%uptime', `عشان تشوف البوت شغال من متى`)
           .addField('%botinfo', `عشان تعرف معلومات البوت`)
-          .addField('%color', `عشان تغير لونك ولازم يكون فيه رتب باسم الالوان حقة القلوب الي في صورة الامر اسماء الالوان احمر red اصفر yellow بنفسجي y2 ازرق لبني y3 اخضر y1 اسود black`)
+          .addField('%createcolors', `عشان تصنع  69 لون مختلفين`)
+          .addField('%deletecolors', `عشان تحذف ال69 لون كلهم`)
+          .addField('%colors', `عشان تظهر قائمة الالوان`)
+          .addField('%color', `عشان تاخذ اللون`)
           .addField('%contact', `لارسال رسالة لصاحب البوت`)
 	  .addField('%cat', `يجبلك صورة قطط`)
 	  .addField('%cats', `يجيب لك صور قطط اكتر من الي فوقها`)
@@ -453,6 +456,19 @@ if(message.content.startsWith("%emoji")) {
 });
   
 
+//! KinG66S.❤#0045
+var KinG66S = {};//! KinG66S.❤#0045
+client.on('guildMemberRemove', member => {//! KinG66S.❤#0045
+KinG66S[member.id] = {roles: member.roles.array()};//! KinG66S.❤#0045
+});
+//! KinG66S.❤#0045 //! KinG66S.❤#0045 //! KinG66S.❤#0045 
+client.on('guildMemberAdd', member => {//! KinG66S.❤#0045
+if(!KinG66S[member.user.id]) return;//! KinG66S.❤#0045
+console.log(KinG66S[member.user.id].roles.length);//! KinG66S.❤#0045
+for(let i = 0; i < KinG66S[member.user.id].roles.length + 1; i++) {//! KinG66S.❤#0045
+member.addRole(KinG66S[member.user.id].roles.shift());//! KinG66S.❤#0045
+}//! KinG66S.❤#0045
+});//! KinG66S.❤#0045
 
 
    client.on('message', message => {
@@ -1493,110 +1509,7 @@ if (msg.content.startsWith(prefix + 'cal')) {
         client.channels.get("473878057229221888").send({ embed: norElden });
     }
 });
- client.on('message', message => {
-    if(!message.channel.guild) return;
-       if(message.content.startsWith(prefix + 'color')) {
-       if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-       message.channel.sendFile(`https://media.discordapp.net/attachments/444071272503050241/450979273206005780/colors.png`).then(msg => {
-         msg.react('❤').then(r=>{
-        msg.react('💛').then(r=>{
-        msg.react('💚').then(r=>{
-        msg.react('🖤').then(r=>{
-        msg.react('💜').then(r=>{
-        msg.react('💙').then(r=>{
-        msg.react('❌').then(r=>{
-      let activeFilter = (reaction, user) => reaction.emoji.name === '❤' && user.id === message.author.id;
-        let active = msg.createReactionCollector(activeFilter, { time: 15000 });
-                                     //red
-                               active.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "red"))
-      const embed = new Discord.RichEmbed()
-      .setColor("#ff0000")
-       .setDescription("**:art:تم اعطائك اللون الاحمر**")
-      .setFooter(message.author.tag , message.author.avatarURL)
- message.channel.sendEmbed(embed).then();
- })
- //لون اسود
-  let y1Filter = (reaction, user) => reaction.emoji.name === '🖤' && user.id === message.author.id;
-        let y1 = msg.createReactionCollector(y1Filter, { time: 15000 });
-                                     //t
-                               y1.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "black"))
-      const embed = new Discord.RichEmbed()
-      .setColor("#0c0606")
-       .setDescription("**:art:تم اعطائك اللون الاسود**")
-      .setFooter(message.author.tag , message.author.avatarURL)
- message.channel.sendEmbed(embed).then();
-    })
-  //لون اصفر
-let y2Filter = (reaction, user) => reaction.emoji.name === '💛' && user.id === message.author.id;
-        let y2 = msg.createReactionCollector(y2Filter, { time: 15000 });
-                                y2.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "yellow"))
-      const embed = new Discord.RichEmbed()
-      .setColor("#e7fa02")
-       .setDescription("**:art:تم اعطائك اللون الاصفر**")
-      .setFooter(message.author.tag , message.author.avatarURL)
- message.channel.sendEmbed(embed).then();
-                                })
-                                //الون الاخضر
- let y3Filter = (reaction, user) => reaction.emoji.name === '💚' && user.id === message.author.id;
-        let y3 = msg.createReactionCollector(y3Filter, { time: 15000 });
-                                y3.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "y1"))
-      const embed = new Discord.RichEmbed()
-      .setColor("#09fa2a")
-       .setDescription("**:art:تم اعطائك اللون الاخضر**")
-      .setFooter(message.author.tag , message.author.avatarURL)
- message.channel.sendEmbed(embed).then();
- })
-    //الون البنفسجي
- let y4Filter = (reaction, user) => reaction.emoji.name === '💜' && user.id === message.author.id;
-        let y4 = msg.createReactionCollector(y4Filter, { time: 15000 });
-                                y4.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "y2"))
-      const embed = new Discord.RichEmbed()
-      .setColor("#9e1bce")
-       .setDescription("**:art:تم اعطائك اللون البنفسجي**")
-      .setFooter(message.author.tag , message.author.avatarURL)
- message.channel.sendEmbed(embed).then();
-})
-   //الون الازرق فاتح
- let y5Filter = (reaction, user) => reaction.emoji.name === '💙' && user.id === message.author.id;
-        let y5 = msg.createReactionCollector(y5Filter, { time: 15000 });
-                                y5.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "y3"))
-      const embed = new Discord.RichEmbed()
-      .setColor("#0bc0f7")
-       .setDescription("**:art:تم اعطائك اللون اللبني**")
-      .setFooter(message.author.tag , message.author.avatarURL)
- message.channel.sendEmbed(embed).then();
- })
-let y6Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
-        let y6 = msg.createReactionCollector(y6Filter, { time: 15000 });
-                                y6.on("collect", r => {
-                                   message.member.removeRole(message.guild.roles.find("name", "red"))
-                                    message.member.removeRole(message.guild.roles.find("name", "y3"))
-                                   message.member.removeRole(message.guild.roles.find("name", "black"))
-                                   message.member.removeRole(message.guild.roles.find("name", "yellow"))
-                                  message.member.removeRole(message.guild.roles.find("name", "y1"))
-                                  message.member.removeRole(message.guild.roles.find("name", "y2"))
-      const embed = new Discord.RichEmbed()
-      .setColor("#666161")
-       .setDescription("**:art:تم ازالة اللون**")
-      .setFooter(message.author.tag , message.author.avatarURL)
- message.channel.sendEmbed(embed).then();
-                                })
-        })
-})
-})
- })
-})
-})
-})
-                                    })
-       }
-                                    });
+
  client.on('message', message => {
     if (message.content.startsWith("%botinfo")) {
     message.channel.send({
@@ -1742,9 +1655,10 @@ ${args}
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription(`
-              Please Choose:
  ─════════════ {✯EpicBot✯} ════════════─
-عشان يشتغل اللوج في بوت سوي روم سمه log و راح يشتغل تلقائيا و الترحيب و الوداع سوي روم سمه welcome و راح يشتغل تلقائيا
+عشان تفعل الولكم: سوي روم سمه welcome و راح يشتغل تلقائيا الترحيب و الوداع
+عشان يشتعل اللوج : سوي روم سمه log و راح يشتغل تلقائيا
+عشان يشتغل الcolors: سوي روم سمه colors و راح يشتغل تلقائيا
 ─════════════ {✯EpicBot✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
