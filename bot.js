@@ -1262,7 +1262,7 @@ var cats = [
 "https://cdn.discordapp.com/attachments/479044877745782801/479046338718466058/images_32.jpg",
 "https://cdn.discordapp.com/attachments/479044877745782801/479046340379148288/images_33.jpg",
 "https://cdn.discordapp.com/attachments/479044877745782801/479046342795198484/images_34.jpg",
-"https://cdn.discordapp.com/attachments/479044877745782801/479046349644365827/images.jpg",
+"https://cdn.discordapp.com/attachments/479044877745782801/479046349644365827/images.jpg"
 ]
     client.on('message', message => {
         var args = message.content.split(" ").slice(1);
