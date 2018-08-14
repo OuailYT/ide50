@@ -1658,7 +1658,6 @@ ${args}
  ─════════════ {✯EpicBot✯} ════════════─
 عشان تفعل الولكم: سوي روم سمه welcome و راح يشتغل تلقائيا الترحيب و الوداع
 عشان يشتعل اللوج : سوي روم سمه log و راح يشتغل تلقائيا
-عشان يشتغل الcolors: سوي روم سمه colors و راح يشتغل تلقائيا
 ─════════════ {✯EpicBot✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
@@ -3774,14 +3773,12 @@ const prefix = '%'
 	
 	client.on('message', msg => {
     if (msg.content === '%colors') {
-    let channel = member.guild.channels.find('name', 'colors');
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/472743324084731914/478685035730305036/color.png"})
     }
   });
 client.on('message', message => {
     let args = message.content.split(' ').slice(1);
 if(message.content.split(' ')[0] == '%color'){
-    let channel = member.guild.channels.find('name', 'colors');
      const embedd = new Discord.RichEmbed()
 .setFooter('Requested by '+message.author.username, message.author.avatarURL)
 .setDescription(`**There's No Color With This Number ** ❌ `)
