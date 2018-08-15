@@ -1268,7 +1268,7 @@ var Information = [
         var args = message.content.split(" ").slice(1);
     if(message.content.startsWith(prefix + 'هل تعلم')) {
          var Information = new Discord.RichEmbed()
-.setImage(Information[Math.floor(Math.random() * Information.length)])
+.setImage(Information[Math.floor(Math.random() * Information.client)])
 message.channel.sendEmbed(Information);
     }
 });
