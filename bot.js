@@ -147,7 +147,7 @@ hours = 12;
                   let giveEmbed = new Discord.RichEmbed()
                   .setDescription(`**${title}** \nReact With 🎉 To Enter! \nTime remaining : ${duration / 60000} **Minutes**\n **Created at :** ${hours}:${minutes}:${seconds} ${suffix}`)
                   .setFooter(message.author.username, message.author.avatarURL);
-                  message.guild.channels.find("name" , room).send(' :heavy_check_mark: **تم صنع الجيف اواي** :heavy_check_mark:' , {embed: giveEmbed}).then(m => {
+                  message.guild.channels.find("name" , room).send(' :heavy_check_mark: **To Enter The Give Away Press** :tada:' , {embed: giveEmbed}).then(m => {
                      let re = m.react('🎉');
                      setTimeout(() => {
                        let users = m.reactions.get("🎉").users;
@@ -1631,7 +1631,7 @@ if (msg.content.startsWith(prefix + 'cal')) {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
                   .addField('``My Prefix``' , `%` , true)
                   .addField('``My Language``' , `[ Java Script ]` , true)
-                  .addField("Created on", bot.user.createdAt)
+                  .addField("Created on", client.user.createdAt)
                   .setFooter('By |<@385103221804236800>')
     })
 }
