@@ -1221,7 +1221,8 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
   
 });
 
-var Information = [
+
+var cats = [
 
 "https://cdn.discordapp.com/attachments/479044877745782801/479045993132720128/download_1.jpg",
 "https://cdn.discordapp.com/attachments/479044877745782801/479046003937247253/download_2.jpg",
@@ -1267,13 +1268,11 @@ var Information = [
     client.on('message', message => {
         var args = message.content.split(" ").slice(1);
     if(message.content.startsWith(prefix + 'هل تعلم')) {
-         var Information = new Discord.RichEmbed()
-.setImage(Information[(Math.floor(Math.random() * Information.length)])
-message.channel.sendEmbed(Information);
+         var cat = new Discord.RichEmbed()
+.setImage(cats[Math.floor(Math.random() * cats.length)])
+message.channel.sendEmbed(cat);
     }
 });
-
-
 
 
 
