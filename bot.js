@@ -1271,6 +1271,7 @@ message.channel.sendEmbed(cat);
       .addField(':crown:**__ الأونـر__**',`**${msg.guild.owner}**`,true)
       .addField(':id:**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
       .addField(':date:**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
+      .addField(":date: ***انت دخلت السيرفر في***", msg.member.joinedAt)
       msg.channel.send({embed:embed});
 	    }
   });
