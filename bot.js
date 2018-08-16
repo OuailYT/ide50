@@ -418,6 +418,7 @@ client.on("message", message => {
           .addField('%color', `عشان تاخذ اللون`)
           .addField('%contact', `لارسال رسالة لصاحب البوت`)
 	  .addField('%cats', `يجيب لك صور قطط`)
+	  .addField('%count', `لمعرفة عدد الناس الي في سيرفر`)
       .setFooter('[❖═════اومر الاعضاء═══════❖]')
   message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
@@ -447,7 +448,19 @@ client.on("message", message => {
  }
 });
 
+  Client.on('message', message => {
 
+    if (message.content === "%count") {
+
+    let embed = new Discord.RichEmbed()
+
+.addField('**Count**: ' , message.guild.memberCount)
+.setColor("RANDOM")
+.setDescription(`${message.guild.name}`)
+     message.channel.sendEmbed(embed);
+} 
+
+});
 
 
 
@@ -491,7 +504,7 @@ member.addRole(KinG66S[member.user.id].roles.shift());
 		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
 		   var embed = new Discord.RichEmbed()
 		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
-		   .setURL("https://discordapp.com/api/oauth2/authorize?client_id=" + `${client.user.id}` + "&permissions=0&scope=bot")
+		   .setURL("https://discordapp.com/api/oauth2/authorize?client_id=" + `${client.user.id}` + "&permissions=8&scope=bot")
 		   .setTimestamp()
 		   .setFooter(`Requested By | ${message.author.username}`)
 		   .setColor("RANDOM")
