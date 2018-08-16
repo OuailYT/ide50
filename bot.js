@@ -2322,7 +2322,7 @@ ${args}
  });
 
 
-*
+/*
 البكجآت
 npm install discord.js
 npm install ytdl-core
