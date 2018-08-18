@@ -1624,7 +1624,7 @@ if (msg.content.startsWith(prefix + 'cal')) {
     let createdAt = moment(client.user.createdAt).fromNow();
 
 let m = await message.channel.send(`\`\`\`asciidoc\n= Normal Information =
-Creator :: ${client.users.get("323885452207587329").username} - ${createdAt}
+Bot Creator :: ${client.users.get("385103221804236800").username}
 Ping :: ${client.pings[0]} ms
 UpTime :: ${upTime}
 
