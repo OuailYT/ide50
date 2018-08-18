@@ -518,18 +518,19 @@ member.addRole(KinG66S[member.user.id].roles.shift());
 
 
 
-client.on("message", message => {
- if (message.content === "%support") {
-  const embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setFooter('© EpicBot جميع الحقوق محفوظة 2018 لــبوت')
-      .addField('سيرفر الدعم الفني', `https://discord.gg/qHR3nEa`)
+   client.on('message', message => {
+	   if(message.content.startsWith(`${prefix}support`)){
+		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
+		   var embed = new Discord.RichEmbed()
+		   .setTitle(">> ClickHere To Join The Support " + `${client.user.username}` + " <<")
+		   .setURL("https://discord.gg/qHR3nEa" + `${client.user.id}`")
+		   .setTimestamp()
+		   .setFooter(`Requested By | ${message.author.username}`)
+		   .setColor("RANDOM")
   message.channel.send(`:white_check_mark: | Check Your DM`)
-  message.author.send({embed});
- }
-});
-
-
+		   message.author.send({embed})
+	   }
+   });
 
 
 
