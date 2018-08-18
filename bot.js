@@ -517,13 +517,12 @@ member.addRole(KinG66S[member.user.id].roles.shift());
 
 
 
-
    client.on('message', message => {
 	   if(message.content.startsWith(`${prefix}support`)){
 		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
 		   var embed = new Discord.RichEmbed()
-		   .setTitle(">> ClickHere To Join The Support " + `${client.user.username}` + " <<")
-		   .setURL("https://discord.gg/qHR3nEa" + `${client.user.id}`")
+		   .setTitle(">> ClickHere To Join The Support Server " + `${client.user.username}` + " <<")
+		   .setURL("https://discord.gg/" + `${client.user.id}` + "jECGW9N")
 		   .setTimestamp()
 		   .setFooter(`Requested By | ${message.author.username}`)
 		   .setColor("RANDOM")
