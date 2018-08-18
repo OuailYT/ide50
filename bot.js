@@ -412,6 +412,7 @@ client.on("message", message => {
           .addField('%suggest', `لاقتراح شئ و لازم يكون فيه روم اسمه suggestions `)
           .addField('%uptime', `عشان تشوف البوت شغال من متى`)
           .addField('%botinfo', `عشان تعرف معلومات البوت`)
+          .addField('%bot', `عشان تعرف المزيد من معلومات البوت`)
           .addField('%createcolors', `عشان تصنع  69 لون مختلفين`)
           .addField('%deletecolors', `عشان تحذف ال69 لون كلهم`)
           .addField('%colors', `عشان تظهر قائمة الالوان`)
@@ -1601,6 +1602,41 @@ if (msg.content.startsWith(prefix + 'cal')) {
     })
 }
 });
+
+ client.on('message',async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === 'dm') return;
+  if(message.content.startsWith(prefix + "bot")) {
+    let ramUsage = (process.memoryUsage().rss / 1048576).toFixed();
+    let upTime = timeCon(process.uptime());
+    let createdAt = moment(hero.user.createdAt).fromNow();
+
+let m = await message.channel.send(`\`\`\`asciidoc\n= Normal Information =
+Creator :: ${client.users.get("323885452207587329").username} - ${createdAt}
+Ping :: ${client.pings[0]} ms
+UpTime :: ${upTime}
+
+= Servers Information =
+Servers :: ${client.guilds.size}
+Users :: ${client.users.size}
+Channels :: ${client.channels.size}
+
+= Developer Information =
+NodeJS :: ${process.version}
+DiscordJS :: ${Discord.version}
+Arch :: ${process.arch}
+Platform :: ${process.platform}
+
+= Host Information =
+UsedHeap :: ${Math.round(process.memoryUsage().heapUsed / 1024 / 1024 * 100) / 100} MB
+Heap :: ${Math.round(process.memoryUsage().heapTotal / 1024 / 1024 * 100) / 100} MB
+Ram :: ${ramUsage} MB
+Rss :: ${Math.round(process.memoryUsage().rss / 1024 / 1024 * 100) / 100} MB
+\`\`\``);
+  }
+});
+  
+
  client.on('message', message => {
      var prefix = "%"
      if (message.author.bot) return;
