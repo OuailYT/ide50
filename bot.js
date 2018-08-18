@@ -412,7 +412,6 @@ client.on("message", message => {
           .addField('%suggest', `لاقتراح شئ و لازم يكون فيه روم اسمه suggestions `)
           .addField('%uptime', `عشان تشوف البوت شغال من متى`)
           .addField('%botinfo', `عشان تعرف معلومات البوت`)
-          .addField('%bot', `عشان تعرف المزيد من معلومات البوت`)
           .addField('%createcolors', `عشان تصنع  69 لون مختلفين`)
           .addField('%deletecolors', `عشان تحذف ال69 لون كلهم`)
           .addField('%colors', `عشان تظهر قائمة الالوان`)
@@ -509,7 +508,7 @@ member.addRole(KinG66S[member.user.id].roles.shift());
 		   .setTimestamp()
 		   .setFooter(`Requested By | ${message.author.username}`)
 		   .setColor("RANDOM")
-  message.channel.send(`:white_check_mark: | Check Your DM`)
+  message.channel.send(`:mailbox_with_mail:  | Check Your DM`)
 		   message.author.send({embed})
 	   }
    });
@@ -526,12 +525,37 @@ member.addRole(KinG66S[member.user.id].roles.shift());
 		   .setTimestamp()
 		   .setFooter(`Requested By | ${message.author.username}`)
 		   .setColor("RANDOM")
-  message.channel.send(`:white_check_mark: | Check Your DM`)
+  message.channel.send(`:mailbox_with_mail:  | Check Your DM`)
 		   message.author.send({embed})
 	   }
    });
 
 
+client.on('message', message => {
+       if(message.content.startsWith(`${prefix}invite`)){
+           if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
+           var embed = new Discord.RichEmbed()
+           .setTitle("Invite EpicBot")
+           .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&permissions=8&scope=bot")
+           .setTimestamp()
+           .setColor("RANDOM")
+           message.channel.send({embed})
+  message.channel.send(`:mailbox_with_mail:  | هذه الرسالة غرضها لو انت مسكر خاص`)
+       }
+   });
+
+client.on('message', message => {
+       if(message.content.startsWith(`${prefix}support`)){
+           if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
+           var embed = new Discord.RichEmbed()
+           .setTitle("Join The Support Of EpicBot")
+	   .setURL("https://discord.gg/" + `${client.user.id}` + "jECGW9N")
+           .setTimestamp()
+           .setColor("RANDOM")
+           message.channel.send({embed})
+  message.channel.send(`:mailbox_with_mail:  | هذه الرسالة غرضها لو انت مسكر خاص`)
+       }
+   });
 
 
 
@@ -1618,7 +1642,7 @@ if (msg.content.startsWith(prefix + 'cal')) {
   
   if(message.author.bot) return;
   if(message.channel.type === 'dm') return;
-  if(message.content.startsWith(prefix + "bot")) {
+  if(message.content.startsWith(prefix + "botinfo")) {
     let ramUsage = (process.memoryUsage().rss / 1048576).toFixed();
     let upTime = timeCon(process.uptime());
     let createdAt = moment(client.user.createdAt).fromNow();
