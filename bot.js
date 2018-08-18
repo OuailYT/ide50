@@ -504,7 +504,7 @@ member.addRole(KinG66S[member.user.id].roles.shift());
 	   if(message.content.startsWith(`${prefix}invite`)){
 		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
 		   var embed = new Discord.RichEmbed()
-		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
+		   .setTitle(">> ClickHere To Add " + `${client.user.username}` + " <<")
 		   .setURL("https://discordapp.com/api/oauth2/authorize?client_id=" + `${client.user.id}` + "&permissions=8&scope=bot")
 		   .setTimestamp()
 		   .setFooter(`Requested By | ${message.author.username}`)
@@ -523,7 +523,7 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© EpicBot جميع الحقوق محفوظة 2018 لــبوت')
-      .addField('سيرفر الدعم الفني', `https://discord.gg/JM2sNEp`)
+      .addField('سيرفر الدعم الفني', `https://discord.gg/qHR3nEa`)
   message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
  }
