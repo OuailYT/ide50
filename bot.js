@@ -1401,7 +1401,7 @@ let args = message.content.split(" ").slice(1);
     var MoCodes = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
     .setDescription('***راح الحبيب*** '+'<@'+`${member.user.id}`+'>'+'T-T')
-.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477597893822382091/gd.jpg','https://cdn.discordapp.com/attachments/445335688628666388/477609046568861696/Z.png')
+.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477597893822382091/gd.jpg','https://cdn.discordapp.com/attachments/385163493512445962/480899764494401559/9k.png','https://cdn.discordapp.com/attachments/445335688628666388/477609046568861696/Z.png')
     .setColor('RANDOM')
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
