@@ -1407,18 +1407,9 @@ var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
 channel.send({embed : MoCodes});
 });
- client.on('message', message => {
-            if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('%bcall')){
- if (message.author.id !== '385103221804236800') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
- if(!message.author.id === '385103221804236800') return;
-message.channel.sendMessage('جار ارسال الرسالة |✅')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});
+
+
+
  	const fs = require('fs');
 	const moment = require('moment');
 let profile = JSON.parse(fs.readFileSync("./profile.json", "utf8"))
