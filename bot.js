@@ -1495,9 +1495,11 @@ message.channel.sendEmbed(cat);
          message.channel.send({embed});
      }
   });
-   client.on('message', message => {
+
+client.on('message', message => {
+var perfix = "%";
       if (message.content.startsWith(prefix + 'clear')) {
-        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`You Don't Have [*MANAGE_MESSAGES*] Permission `).catch(console.error);
+        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`***You Don't Have*** [***MANAGE_MESSAGES***] ***Permission*** `).catch(console.error);
     message.delete()
     if(!message.channel.guild) return;
 let args = message.content.split(" ").slice(1);
@@ -1508,7 +1510,9 @@ let args = message.content.split(" ").slice(1);
     var embed = new Discord.RichEmbed()
         .setTitle('تم مسح الشات بنجاح :white_check_mark: ')
         .setColor('RANDOM')
-       message.channel.sendEmbed(embed)
+       message.channel.sendEmbed(embed).then(m => {
+    m.delete(1000);
+});
  };
  });
 
