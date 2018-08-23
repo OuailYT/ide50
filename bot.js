@@ -756,6 +756,9 @@ client.on("raw", async packet => {
   
 
 
+  
+
+
   client.on('message', message => {
 if(message.content.startsWith("%emoji")) {
   let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
