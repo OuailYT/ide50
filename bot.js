@@ -555,6 +555,7 @@ client.on("message", message => {
           .addField('%contact', `لارسال رسالة لصاحب البوت`)
 	  .addField('%cats', `يجيب لك صور قطط`)
 	  .addField('%count', `لمعرفة عدد الناس الي في سيرفر`)
+          .addField('%link', `عشان تختصر رابط`)
       .setFooter('[❖═════اومر الاعضاء═══════❖]')
   message.channel.send(`:white_check_mark: | Check Your DM`)
   message.author.send({embed});
@@ -736,7 +737,23 @@ client.on("raw", async packet => {
 })
 
 
+  client.on('message', message => { 
+    var prefix = "%";
+ let args = message.content.split(' ').slice(1);
+    if(message.content.startsWith(prefix + 'link')) {
+    if(!message.channel.guild) return;  
 
+        googl.setKey('AIzaSyC2Z2mZ_nZTcSvh3QvIyrmOIFP6Ra6co6w');
+        googl.getKey();
+        googl.shorten(args.join(' ')).then(shorturl => {
+            message.channel.send(''+shorturl)
+        }).catch(e=>{
+            console.log(e.message);
+            message.channel.send('خطأ!');
+        });
+}
+});
+  
 
 
   client.on('message', message => {
