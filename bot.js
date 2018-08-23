@@ -528,6 +528,7 @@ client.on("message", message => {
       .setColor("RANDOM")
            .setFooter('[❖═════اومر الاعضاء═══════❖]')
           .addField('%invite', `لاضافة البوت الى سيرفرك`)
+          .addField('%invites', `لمعرفة كم دعوة للسيرفر`)
 	  .addField('%roles', `لمعرفة الرتب الي في السيرفر`)
           .addField('%avatar', `يجبلك الافتار حقك يعني صورة حسابك`)
 	  .addField('%server', `يجبلك معلومات السيرفر`)
@@ -596,6 +597,23 @@ client.on("message", message => {
 
 });
 
+
+  client.on('message', message => {
+   if(message.content.startsWith(prefix + "invites")) {
+    message.guild.fetchInvites().then(invs => {
+      let user = message.mentions.users.first() || message.author
+      let personalInvites = invs.filter(i => i.inviter.id === user.id);
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+               let mmmmEmbed = new Discord.RichEmbed()
+                         .setAuthor(client.user.username)
+                         .setThumbnail(message.author.avatarURL)
+ .addField(` لقد قمت بدعوة :`, ` ${inviteCount} `)
+           .setFooter(`- Requested By: ${message.author.tag}`);
+           message.channel.send(mmmmEmbed)
+});
+  }
+});
+  
 
 
 
