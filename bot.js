@@ -530,6 +530,7 @@ client.on("message", message => {
            .setFooter('[❖═════اومر الاعضاء═══════❖]')
           .addField('%invite', `لاضافة البوت الى سيرفرك`)
           .addField('%invites', `لمعرفة كم دعوة للسيرفر`)
+          .addField('%topinv', `لمعرفة مين اكثر واحد دخل ناس للسيرفر`)
 	  .addField('%roles', `لمعرفة الرتب الي في السيرفر`)
           .addField('%avatar', `يجبلك الافتار حقك يعني صورة حسابك`)
 	  .addField('%server', `يجبلك معلومات السيرفر`)
@@ -756,7 +757,29 @@ client.on("raw", async packet => {
   
 
 
-  
+    client.on('message' , async (message) => {
+var prefix = "%"
+    if(message.content.startsWith(prefix + "topinv")) {
+if(message.author.bot) return;
+if(!message.channel.guild) return message.reply(' Error : \` Guild Command \`');
+  var invites = await message.guild.fetchInvites();
+    invites = invites.array();
+    arraySort(invites, 'uses', { reverse: true });
+    let possibleInvites = ['User Invited |  Uses '];
+    invites.forEach(i => {
+        if (i.uses === 0) { 
+            return;
+        }
+      possibleInvites.push(['\n\ ' +'<@'+ i.inviter.id +'>' + '  :  ' +   i.uses]);
+     //معلومه بسيطه يمديك تكرر العمليهه أكثر من مره
+    })
+    const embed = new Discord.RichEmbed()
+ .setColor('RANDOM')
+    .addField("Top Invites." ,`${(possibleInvites)}`)
+
+    message.channel.send(embed)
+    }
+});
 
 
   client.on('message', message => {
